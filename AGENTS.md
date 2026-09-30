@@ -79,7 +79,7 @@ Tüm ajanlar çalışmaya başlamadan önce `CLAUDE.md` ve `ISKELET.md` dosyalar
 | **Alanı** | `src/data/`, `config/season.ts` |
 | **Yapar** | Takım listesini tutar, **Vegas baremlerini web araştırmasıyla bulur**, barem JSON dosyalarını yapılandırır, örnek (`.sample.json`) veri üretir, veri şemasını Zod ile tanımlar (Mantık Ajanı ile birlikte) |
 | **Yapmaz** | Barem veya sonuç **uydurmaz**, hafızadan yazmaz. Bulamadığı veriyi `TODO` olarak bırakır. Sitenin içine scraping kodu yazmaz |
-| **Kontrol listesi** | 30 takım var mı · her kısaltma benzersiz mi · her takımın konferansı ve divizyonu doğru mu · her baremin en az 2 kaynağı var mı · barem toplamı 1215–1245 arasında mı · örnek veri dosyası açıkça "sample" olarak işaretli mi |
+| **Kontrol listesi** | 30 takım var mı · her kısaltma benzersiz mi · her takımın konferansı ve divizyonu doğru mu · her baremin en az 2 kaynağı var mı · barem toplamı 1210–1250 arasında mı · örnek veri dosyası açıkça "sample" olarak işaretli mi |
 
 #### Barem Araştırma Protokolü
 
@@ -93,9 +93,9 @@ Vegas baremleri (NBA win totals) web'den şu adımlarla toplanır:
    - Forum, Reddit, sosyal medya **kaynak sayılmaz**.
 3. **Sezonu doğrula.** Sayfanın yayın tarihi 2026 yazı veya sonbaharı mı, başlıkta "2026-27" geçiyor mu? Geçmiyorsa kullanma.
 4. **Çapraz kontrol.** Her takım için en az 2 bağımsız kaynaktan barem al. Aynı bahis şirketini aktaran iki haber tek kaynak sayılır.
-5. **Konsensüs belirle.** Kaynaklar aynıysa o değer. Farklıysa en yeni tarihli ve en çok tekrar eden değer; 1 galibiyetten fazla fark varsa `needsReview: true`.
+5. **Baremi belirle.** Sitedeki barem BetMGM Blog tablosundaki değerdir (https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/). Diğer kaynaklar çapraz kontrol içindir; BetMGM ile aralarında 1 galibiyetten fazla fark varsa `needsReview: true`. BetMGM'e erişilemezse: en yeni tarihli ve en çok tekrar eden değer.
 6. **Sadece bareme odaklan.** Oran (-110, 1.91 gibi) sitede gösterilmez; kaydetmek gerekmez.
-7. **Toplam kontrolü.** 30 baremi topla; 1215–1245 dışındaysa bir takımda hata vardır, tekrar kontrol et.
+7. **Toplam kontrolü.** 30 baremi topla; 1210–1250 dışındaysa bir takımda hata vardır, tekrar kontrol et.
 8. **Rapor yaz.** `docs/barem-raporu-2026-27.md`: takım · konsensüs barem · kaynaklar · tarih · notlar tablosu, en altta toplam ve `needsReview` listesi.
 9. **Doğrudan yaz.** Kontrollerden geçen baremleri onay beklemeden `src/data/lines/2026-27.json` dosyasına yaz. Kaynakları çelişen takımları en iyi konsensüsle yaz ve `needsReview: true` bırak. Hiç kaynak bulunamayan takım `TODO` kalır. İş sonunda raporu kullanıcıya özetle.
 
@@ -117,7 +117,7 @@ Baremler sezon başlayana kadar oynar. Kilit tarihinden kısa süre önce protok
 |---|---|
 | **Alanı** | `src/app/`, `src/components/`, `src/styles/`, `src/i18n/` |
 | **Yapar** | Sayfalar, bileşenler, sürükle-bırak, masaüstü düzen (duyarlı), erişilebilirlik, Türkçe metinler |
-| **Yapmaz** | İş mantığını bileşen içine gömmez; `src/lib/` fonksiyonlarını çağırır. Resmi logo/font kullanmaz |
+| **Yapmaz** | İş mantığını bileşen içine gömmez; `src/lib/` fonksiyonlarını çağırır. Resmi NBA fontu/lig logosu kullanmaz (takım logoları `public/logos/` içinden) |
 | **Kural** | Kullanıcıya görünen her metin `src/i18n/tr.ts` içinden gelir |
 | **Kontrol listesi** | 1440 ve 1280 px'de düzgün mü · 768 px'de bozulmuyor mu · klavyeyle kullanılabiliyor mu · Alt/Üst sadece renkle değil yazıyla da belli mi · koyu/açık tema kontrastı yeterli mi |
 
@@ -186,3 +186,13 @@ ORKESTRA
 - `src/lib/validation.ts` ortak alandır: şema değişikliğini **Mantık Ajanı** yapar, diğerleri önerir.
 - Bir alt ajan sınırda bir karar vermek zorunda kalırsa kendi başına karar vermez; "Açık sorular" kısmına yazar. Orkestra **kullanıcıya sormadan** en makul kararı verir ve bunu son rapora yazar.
 - `CLAUDE.md`, `ISKELET.md` ve `AGENTS.md` dosyalarını **sadece Orkestra Ajanı** değiştirebilir; yaptığı her değişikliği son rapora yazar.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

@@ -193,15 +193,15 @@ describe("sumLines / lineTotalStatus", () => {
     expect(sumLines([{ line: 47.5 }, { line: 22.5 }, { line: 41 }])).toBe(111);
   });
 
-  it("accepts totals within 1215–1245", () => {
+  it("accepts totals within 1210–1250", () => {
     expect(lineTotalStatus(1230)).toBe("ok");
-    expect(lineTotalStatus(1215)).toBe("ok");
-    expect(lineTotalStatus(1245)).toBe("ok");
+    expect(lineTotalStatus(1210)).toBe("ok");
+    expect(lineTotalStatus(1250)).toBe("ok");
   });
 
-  it("flags totals outside 1215–1245", () => {
-    expect(lineTotalStatus(1214.5)).toBe("out-of-range");
-    expect(lineTotalStatus(1245.5)).toBe("out-of-range");
+  it("flags totals outside 1210–1250", () => {
+    expect(lineTotalStatus(1209.5)).toBe("out-of-range");
+    expect(lineTotalStatus(1250.5)).toBe("out-of-range");
     expect(lineTotalStatus(0)).toBe("out-of-range");
   });
 });

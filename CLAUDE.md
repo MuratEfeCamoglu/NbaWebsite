@@ -8,7 +8,7 @@ Bu dosya, projede çalışan Claude (veya başka bir AI asistanı) için ana ba�
 
 NBA sezonu başlamadan önce kullanıcıların:
 
-1. **30 takımı sıralamasını** (Power Ranking — 1'den 30'a, sürükle-bırak),
+1. **Takımları konferans bazında sıralamasını** (Power Ranking — Batı 1'den 15'e, Doğu 1'den 15'e, sürükle-bırak),
 2. Her takım için belirlenmiş **galibiyet çizgisine (win total line)** karşı **Alt / Üst** tahmini yapmasını,
 3. İsterse her takım için **kendi galibiyet tahminini** (0–82) girmesini
 
@@ -31,7 +31,7 @@ sağlayan bir web sitesi. Sezon ilerledikçe tahminler gerçek sonuçlarla karş
 
 | Terim | Anlamı |
 |---|---|
-| **Power Ranking** | Kullanıcının 30 takımı en iyiden en kötüye dizdiği liste |
+| **Power Ranking** | Kullanıcının her konferansı (Batı, Doğu) ayrı ayrı en iyiden en kötüye dizdiği iki liste (15 + 15). 1–30 tek liste yoktur |
 | **Çizgi / Vegas Baremi (Line)** | Las Vegas ve ABD spor bahis şirketlerinin sezon öncesi açıkladığı galibiyet baremi, örn. `47.5`. Sitedeki tüm Alt/Üst tahminleri bu baremlere karşı yapılır. Tam sayı barem gelirse (örn. `47`) kaynakta nasıl yazıyorsa öyle saklanır ve berabere (push) durumu puanlamada `0` puan sayılır |
 | **Alt / Üst (Under / Over)** | Takımın sezonu çizginin altında mı üstünde mi bitireceği tahmini |
 | **Güven (Confidence)** | Kullanıcının bir Alt/Üst tahminine verdiği önem: 1, 2 veya 3 yıldız |
@@ -124,7 +124,7 @@ interface WinLine {
 interface Prediction {
   userId: string;
   season: string;
-  ranking: TeamId[];                         // uzunluk tam 30, tekrar yok
+  ranking: { West: TeamId[]; East: TeamId[] }; // her konferans tam 15, tekrar yok
   picks: Record<TeamId, {
     side: "over" | "under";
     confidence: 1 | 2 | 3;
@@ -141,7 +141,7 @@ Ayrıntılı sınırlar ve alan kuralları `ISKELET.md` içinde.
 ## 7. Puanlama (Sezon Sonu)
 
 - **Alt/Üst:** Doğru tahmin = `confidence` puanı (1–3). Yanlış = `0`. Berabere (tam sayı baremde takım tam o sayıda galibiyet alırsa) = `0`.
-- **Power Ranking:** Kullanıcının sıralaması ile gerçek sıralama arasındaki mutlak farkların toplamı. **Düşük daha iyi.** Eşit galibiyette gerçek sıralama NBA eşitlik kuralları yerine basitçe galibiyet yüzdesi + takım kısaltması alfabetik ile belirlenir (tutarlı ve öngörülebilir olsun diye).
+- **Power Ranking:** Her konferans kendi içinde değerlendirilir: kullanıcının konferans sıralaması ile gerçek konferans sıralaması arasındaki mutlak farkların toplamı (iki konferans toplanır). **Düşük daha iyi.** Eşit galibiyette gerçek sıralama NBA eşitlik kuralları yerine basitçe galibiyet yüzdesi + takım kısaltması alfabetik ile belirlenir (tutarlı ve öngörülebilir olsun diye).
 - **Projeksiyon:** Ortalama mutlak hata (MAE). Düşük daha iyi.
 
 Puanlama fonksiyonlarının tamamı `src/lib/scoring.ts` içindedir ve %100 birim test kapsamına sahip olmalıdır.
@@ -152,7 +152,7 @@ Puanlama fonksiyonlarının tamamı `src/lib/scoring.ts` içindedir ve %100 biri
 
 - **Kullanıcıdan izin veya onay bekleme.** Büyük bir değişiklikten önce kısa bir plan yaz ve hemen uygula. Belirsiz noktalarda en makul kararı ver, kararı rapora yaz, devam et.
 - `ISKELET.md` içindeki "Kapsam Dışı" listesinde olan bir şeyi **önerme ve yapma**. Kullanıcı açıkça isterse önce `ISKELET.md` güncellenmeli.
-- Vegas baremlerini **web araştırmasıyla kendin bul**, ama `AGENTS.md` → Veri Ajanı → "Barem Araştırma Protokolü"ne birebir uy: en az 2 bağımsız kaynak, her kaynağın URL'si ve tarihi, otomatik doğrulama kontrolleri. Hafızadan veya tahminle barem yazma. Bulamadığın takımı `TODO` bırak.
-- Resmi NBA veya takım logosu, yazı tipi, maskot kullanma. Takımlar kısaltma + renk rozetiyle gösterilir.
+- Sitedeki barem **BetMGM Blog tablosundaki değerdir** (kullanıcı kararı); diğer kaynaklar çapraz kontrol içindir. Vegas baremlerini **web araştırmasıyla kendin bul**, ama `AGENTS.md` → Veri Ajanı → "Barem Araştırma Protokolü"ne birebir uy: en az 2 bağımsız kaynak, her kaynağın URL'si ve tarihi, otomatik doğrulama kontrolleri. Hafızadan veya tahminle barem yazma. Bulamadığın takımı `TODO` bırak.
+- Takımlar gerçek logolarıyla gösterilir (`public/logos/<KISALTMA>.png`, `TeamBadge` bileşeni). Resmi NBA lig logosu, yazı tipi veya maskot kullanma. Altbilgideki marka notu kaldırılmaz.
 - Bir görev birden fazla alana dokunuyorsa `AGENTS.md` içindeki ajan dağılımına göre çalış.
 - Her tamamlanan iş sonunda: ne yapıldı, hangi dosyalar değişti, hangi testler eklendi — kısa özet ver.

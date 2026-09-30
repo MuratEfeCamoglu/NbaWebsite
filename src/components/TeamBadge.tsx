@@ -1,7 +1,7 @@
+import Image from "next/image";
 import { getTeam, type TeamId } from "@/data/teams";
-import { inkFor } from "@/lib/color";
 
-/** Abbreviation + color badge. Stands in for team logos, which are never used. */
+/** Team logo on a light tile, framed in the team's primary color. */
 export function TeamBadge({ teamId }: { teamId: TeamId }) {
   const team = getTeam(teamId);
   return (
@@ -9,14 +9,18 @@ export function TeamBadge({ teamId }: { teamId: TeamId }) {
       role="img"
       aria-label={`${team.city} ${team.name}`}
       title={`${team.city} ${team.name}`}
-      className="font-display flex size-12 shrink-0 items-center justify-center rounded-xl border-2 text-[17px] font-extrabold tracking-[0.03em]"
-      style={{
-        background: team.colors.primary,
-        borderColor: team.colors.secondary,
-        color: inkFor(team.colors.primary),
-      }}
+      data-team-badge={team.id}
+      className="bg-ink flex size-12 shrink-0 items-center justify-center rounded-xl border-2"
+      style={{ borderColor: team.colors.primary }}
     >
-      {team.id}
+      <Image
+        src={`/logos/${team.id}.png`}
+        alt=""
+        width={38}
+        height={38}
+        className="size-[38px] object-contain"
+      />
+      <span className="sr-only">{team.id}</span>
     </span>
   );
 }

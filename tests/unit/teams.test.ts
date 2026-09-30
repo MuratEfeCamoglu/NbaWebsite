@@ -1,5 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { TEAMS, TEAM_IDS, getTeam, isTeamId } from "@/data/teams";
+import {
+  CONFERENCES,
+  DIVISIONS,
+  TEAMS,
+  TEAM_IDS,
+  getTeam,
+  isTeamId,
+  teamsInConference,
+} from "@/data/teams";
 
 // Written independently from teams.ts so a wrong division there fails here.
 const EXPECTED_DIVISIONS: Record<
@@ -58,5 +66,15 @@ describe("teams", () => {
     expect(isTeamId("LAL")).toBe(true);
     expect(isTeamId("SEA")).toBe(false);
     expect(isTeamId("bos")).toBe(false);
+  });
+
+  it("lists three divisions per conference that match the teams", () => {
+    for (const conference of CONFERENCES) {
+      expect(DIVISIONS[conference]).toHaveLength(3);
+      const fromTeams = new Set(
+        teamsInConference(conference).map((team) => team.division),
+      );
+      expect(new Set(DIVISIONS[conference])).toEqual(fromTeams);
+    }
   });
 });

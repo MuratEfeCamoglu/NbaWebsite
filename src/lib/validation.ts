@@ -1,6 +1,12 @@
 import { z } from "zod";
 import { SEASON, TOTAL_WINS } from "@config/season";
-import { TEAM_IDS, isTeamId, type TeamId } from "@/data/teams";
+import {
+  TEAM_IDS,
+  isTeamId,
+  teamsInConference,
+  type Conference,
+  type TeamId,
+} from "@/data/teams";
 
 const MIN_SOURCES = 2;
 /** Sources further apart than this many wins require `needsReview`. */
@@ -106,3 +112,63 @@ export function lineTotalStatus(total: number): LineTotalStatus {
     ? "ok"
     : "out-of-range";
 }
+
+function conferenceListSchema(conference: Conference) {
+  const expected = teamsInConference(conference)
+    .map((team) => team.id as TeamId)
+    .sort();
+  return z
+    .array(teamIdSchema)
+    .refine(
+      (list) =>
+        list.length === expected.length &&
+        [...list].sort().every((teamId, index) => teamId === expected[index]),
+      { error: `Must list every ${conference} team exactly once` },
+    );
+}
+
+/** Power Ranking: each conference ordered separately, best team first. */
+export const rankingSchema = z.strictObject({
+  West: conferenceListSchema("West"),
+  East: conferenceListSchema("East"),
+});
+
+export type Ranking = z.infer<typeof rankingSchema>;
+
+export const sideSchema = z.enum(["over", "under"]);
+export const confidenceSchema = z.union([
+  z.literal(1),
+  z.literal(2),
+  z.literal(3),
+]);
+export const projectedWinsSchema = z
+  .number()
+  .int()
+  .min(0)
+  .max(SEASON.gamesPerTeam);
+
+/** A pick that is still being edited; every field is optional. */
+export const draftPickSchema = z
+  .strictObject({
+    side: sideSchema.optional(),
+    confidence: confidenceSchema.optional(),
+    projectedWins: projectedWinsSchema.optional(),
+  })
+  .refine((pick) => pick.confidence === undefined || pick.side !== undefined, {
+    error: "Confidence needs a side",
+  });
+
+export type DraftPick = z.infer<typeof draftPickSchema>;
+
+/** The prediction as stored in the browser while the user is working on it. */
+export const draftSchema = z.strictObject({
+  season: z.string(),
+  /** null until the user has ordered the teams. */
+  ranking: rankingSchema.nullable(),
+  picks: z.partialRecord(
+    z.enum(TEAM_IDS as [TeamId, ...TeamId[]]),
+    draftPickSchema,
+  ),
+});
+
+export type Draft = z.infer<typeof draftSchema>;

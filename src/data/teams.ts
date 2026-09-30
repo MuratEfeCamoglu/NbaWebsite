@@ -73,3 +73,15 @@ export function isTeamId(value: string): value is TeamId {
 export function getTeam(id: TeamId): Team {
   return TEAMS_BY_ID.get(id) as Team;
 }
+
+export const CONFERENCES: readonly Conference[] = ["West", "East"];
+
+export function teamsInConference(conference: Conference) {
+  return TEAMS.filter((team) => team.conference === conference);
+}
+
+/** Divisions ("gruplar") of each conference, in display order. */
+export const DIVISIONS: Record<Conference, readonly Division[]> = {
+  West: ["Northwest", "Pacific", "Southwest"],
+  East: ["Atlantic", "Central", "Southeast"],
+};

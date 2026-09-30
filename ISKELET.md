@@ -16,13 +16,16 @@ Bu dosya projenin **neyi yapıp neyi yapmayacağını** tanımlar. `CLAUDE.md` "
 - [ ] Vercel'e ilk boş yayın
 
 ### Faz 1 — Hesapsız MVP (veritabanı yok)
-- [ ] **Power Ranking sayfası:** 30 takımı sürükle-bırak ile sırala; Doğu / Batı / Tümü filtresi
-- [ ] **Alt/Üst sayfası:** her takım için çizgi göster, Alt veya Üst seç, 1–3 güven puanı ver
-- [ ] **Projeksiyon girişi (opsiyonel):** her takıma 0–82 arası galibiyet tahmini
-- [ ] **Toplam galibiyet göstergesi:** projeksiyon toplamı / 1230, sapma uyarısı
-- [ ] **Tutarlılık uyarısı:** Kullanıcı bir takımı 1. sıraya koyup 30. sıradaki takımdan daha düşük projeksiyon girdiyse nazikçe işaret et
-- [ ] Tahminler tarayıcıda (`localStorage`) saklanır
+- [x] **Power Ranking sayfası:** Batı ve Doğu ayrı ayrı, sürükle-bırak ile 1–15 sıralanır (1–30 tek liste yok)
+- [x] **Alt/Üst sayfası:** her takım için çizgi göster, Alt veya Üst seç, 1–3 güven puanı ver; konferansa göre gruplu, sıra numarası konferans içi (1–15); Batı / Doğu / Tümü filtresi
+- [x] **Projeksiyon girişi (opsiyonel):** her takıma 0–82 arası galibiyet tahmini
+- [x] **Toplam galibiyet göstergesi:** projeksiyon toplamı / 1230, sapma uyarısı
+- [ ] **Tutarlılık uyarısı:** Kullanıcı aynı konferansta bir takımı üst sıraya koyup alt sıradaki takımdan belirgin düşük projeksiyon girdiyse nazikçe işaret et
+- [x] Tahminler tarayıcıda (`localStorage`) saklanır
 - [ ] **Paylaşım:** tahmin, URL içinde sıkıştırılmış olarak kodlanır → salt okunur paylaşım sayfası
+- [x] **Özet sayfası:** istatistikler, uyarılar, konferans bazında tüm tahminler
+- [x] **Resim olarak indirme:** tümü tek PNG, ya da yalnızca sıralama / yalnızca Alt/Üst (tarayıcıda canvas ile üretilir)
+- [x] **Görünüm seçeneği:** takımlar konferansa (15 + 15) ya da gruplara/divizyonlara (6 × 5) göre listelenir; kullanıcı seçer, tercih tarayıcıda saklanır
 - [ ] Görsel olarak paylaşılabilir özet kartı (Open Graph görseli)
 
 ### Faz 2 — Hesaplar ve Kalıcılık
@@ -55,7 +58,7 @@ Bu liste bilinçli kararlardır. Buradaki bir şeyi eklemek için önce bu dosya
 | Canlı skor, maç maç takip | Ürünün amacı sezonluk tahmin; ayrıca veri maliyeti yüksek |
 | Oyuncu istatistikleri, oyuncu bazlı tahmin | v1 sadece takım bazlı |
 | Playoff / şampiyonluk / MVP tahmini | İleride ayrı özellik olabilir, v1'de yok |
-| Resmi NBA / takım logoları, fontları | Marka hakları. Kısaltma + renk rozeti kullanılır |
+| Resmi NBA / takım **fontları**, maskotlar, NBA lig logosu | Marka hakları. (Takım logoları kullanıcı kararıyla kapsam içine alındı: `public/logos/`, yalnızca takımı tanıtmak için, altbilgide marka notuyla) |
 | Canlı sitenin bahis sitelerinden otomatik barem çekmesi (production scraping, cron ile bahis sitesi okuma) | Kullanım koşulları ihlali ve kırılgan. **İzin verilen:** geliştirme sırasında Veri Ajanı'nın spor medyası ve herkese açık sayfalarda web araştırması yapıp baremleri tek seferlik toplaması (bkz. `AGENTS.md`) |
 | Barem geçmişi / barem hareketi grafiği | Sezon başı tek bir "konsensüs barem" yeterli |
 | Kendi istatistiksel tahmin modelimiz ("site şunu diyor") | Kullanıcının fikri ön planda; model v1'de dikkat dağıtır |
@@ -87,7 +90,7 @@ nba-tahmin/
 │   │   ├── liderlik/page.tsx         # (Faz 3)
 │   │   └── admin/                    # (Faz 2) çizgi girişi
 │   ├── components/
-│   │   ├── TeamBadge.tsx             # kısaltma + renk rozeti
+│   │   ├── TeamBadge.tsx             # takım logosu rozeti
 │   │   ├── RankingList.tsx           # sürükle-bırak liste
 │   │   ├── OverUnderRow.tsx          # tek takım Alt/Üst satırı
 │   │   ├── WinTotalMeter.tsx         # 1230 göstergesi
@@ -118,11 +121,11 @@ nba-tahmin/
 
 | Alan | Kural |
 |---|---|
-| `ranking` | Tam 30 eleman, her takım bir kez, geçerli `TeamId` |
+| `ranking` | Konferans başına bir liste (`West`, `East`); her biri tam 15 eleman, o konferansın her takımı bir kez |
 | `line` | 0 ile 82 arası, `.5` veya tam sayı (kaynakta nasıl yazıyorsa) |
 | `sources` | En az 2 bağımsız kaynak; her birinde URL + `retrievedAt` zorunlu |
 | Kaynak farkı | Kaynaklar arasında 1 galibiyetten fazla fark varsa takım `needsReview` olarak işaretlenir |
-| Barem toplamı | 30 baremin toplamı genelde 1230 civarındadır; 1215–1245 dışındaysa Veri Ajanı uyarı verir (muhtemelen hatalı veri) |
+| Barem toplamı | 30 baremin toplamı genelde 1230 civarındadır; 1210–1250 dışındaysa Veri Ajanı uyarı verir (muhtemelen hatalı veri) |
 | Barem kilidi | Baremler Kilit tarihinde dondurulur; sezon içinde değişmez |
 | `side` | Sadece `"over"` veya `"under"` |
 | `confidence` | Sadece `1`, `2`, `3` |
@@ -140,10 +143,10 @@ nba-tahmin/
 Ana sayfa
    │  "Tahminine başla"
    ▼
-Power Ranking (1→30 sürükle-bırak)
+Power Ranking (Batı 1→15, Doğu 1→15 sürükle-bırak)
    │  "Devam"
    ▼
-Alt / Üst (30 satır, sıralama sırasıyla listelenir)
+Alt / Üst (konferans başına 15 satır, sıralama sırasıyla listelenir)
    │  ├─ her satır: çizgi · Alt | Üst · ★★★ · [projeksiyon]
    │  └─ üstte sabit: Toplam galibiyet göstergesi
    │  "Özeti gör"

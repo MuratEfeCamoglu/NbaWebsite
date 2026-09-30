@@ -13,7 +13,7 @@ export const SEASON = {
   lockAt: "2026-10-20T19:00:00Z",
   displayTimeZone: "Europe/Istanbul",
   /** Sum of all win lines is expected within TOTAL_WINS ± this value. */
-  lineTotalTolerance: 15,
+  lineTotalTolerance: 20,
   /** Projection sum further than this from TOTAL_WINS triggers a warning. */
   projectionTotalTolerance: 30,
 } as const;

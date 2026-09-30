@@ -6,14 +6,14 @@
     {
       "teamId": "ATL",
       "season": "2026-27",
-      "line": 44.5,
+      "line": 43.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
           "line": 43.5,
-          "publishedAt": "2026-07-28",
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -32,11 +32,11 @@
       "line": 24.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
-          "line": 22.5,
-          "publishedAt": "2026-07-28",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
+          "line": 24.5,
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -55,8 +55,7 @@
           "publishedAt": "2026-09-25",
           "retrievedAt": "2026-09-30"
         }
-      ],
-      "needsReview": true
+      ]
     },
     {
       "teamId": "BOS",
@@ -64,11 +63,11 @@
       "line": 51.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
           "line": 51.5,
-          "publishedAt": "2026-07-28",
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -93,14 +92,14 @@
     {
       "teamId": "CHA",
       "season": "2026-27",
-      "line": 37.5,
+      "line": 39.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
-          "line": 37.5,
-          "publishedAt": "2026-07-28",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
+          "line": 39.5,
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -111,7 +110,8 @@
           "publishedAt": "2026-07-29",
           "retrievedAt": "2026-09-30"
         }
-      ]
+      ],
+      "needsReview": true
     },
     {
       "teamId": "CHI",
@@ -119,11 +119,11 @@
       "line": 29.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
-          "line": 27.5,
-          "publishedAt": "2026-07-28",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
+          "line": 29.5,
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -134,8 +134,7 @@
           "publishedAt": "2026-07-29",
           "retrievedAt": "2026-09-30"
         }
-      ],
-      "needsReview": true
+      ]
     },
     {
       "teamId": "CLE",
@@ -143,11 +142,11 @@
       "line": 47.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
           "line": 47.5,
-          "publishedAt": "2026-07-28",
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -163,14 +162,14 @@
     {
       "teamId": "DAL",
       "season": "2026-27",
-      "line": 35.5,
+      "line": 34.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
           "line": 34.5,
-          "publishedAt": "2026-07-28",
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -189,11 +188,11 @@
       "line": 49.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
           "line": 49.5,
-          "publishedAt": "2026-07-28",
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -220,11 +219,11 @@
       "line": 49.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
-          "line": 50.5,
-          "publishedAt": "2026-07-28",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
+          "line": 49.5,
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -240,14 +239,14 @@
     {
       "teamId": "GSW",
       "season": "2026-27",
-      "line": 39.5,
+      "line": 40.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
           "line": 40.5,
-          "publishedAt": "2026-07-28",
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -263,14 +262,14 @@
     {
       "teamId": "HOU",
       "season": "2026-27",
-      "line": 46.5,
+      "line": 47.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
           "line": 47.5,
-          "publishedAt": "2026-07-28",
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -286,14 +285,14 @@
     {
       "teamId": "IND",
       "season": "2026-27",
-      "line": 43.5,
+      "line": 44.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
           "line": 44.5,
-          "publishedAt": "2026-07-28",
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -309,14 +308,14 @@
     {
       "teamId": "LAC",
       "season": "2026-27",
-      "line": 28.5,
+      "line": 30.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
-          "line": 28.5,
-          "publishedAt": "2026-07-28",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
+          "line": 30.5,
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -327,19 +326,20 @@
           "publishedAt": "2026-07-29",
           "retrievedAt": "2026-09-30"
         }
-      ]
+      ],
+      "needsReview": true
     },
     {
       "teamId": "LAL",
       "season": "2026-27",
-      "line": 45.5,
+      "line": 46.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
-          "line": 45.5,
-          "publishedAt": "2026-07-28",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
+          "line": 46.5,
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -355,14 +355,14 @@
     {
       "teamId": "MEM",
       "season": "2026-27",
-      "line": 28.5,
+      "line": 29.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
-          "line": 28.5,
-          "publishedAt": "2026-07-28",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
+          "line": 29.5,
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -378,14 +378,14 @@
     {
       "teamId": "MIA",
       "season": "2026-27",
-      "line": 45.5,
+      "line": 46.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
           "line": 46.5,
-          "publishedAt": "2026-07-28",
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -401,14 +401,14 @@
     {
       "teamId": "MIL",
       "season": "2026-27",
-      "line": 24.5,
+      "line": 25.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
-          "line": 26.5,
-          "publishedAt": "2026-07-28",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
+          "line": 25.5,
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -419,8 +419,7 @@
           "publishedAt": "2026-07-29",
           "retrievedAt": "2026-09-30"
         }
-      ],
-      "needsReview": true
+      ]
     },
     {
       "teamId": "MIN",
@@ -428,11 +427,11 @@
       "line": 48.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
-          "line": 49.5,
-          "publishedAt": "2026-07-28",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
+          "line": 48.5,
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -456,14 +455,14 @@
     {
       "teamId": "NOP",
       "season": "2026-27",
-      "line": 28.5,
+      "line": 27.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
-          "line": 29.5,
-          "publishedAt": "2026-07-28",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
+          "line": 27.5,
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -482,11 +481,11 @@
       "line": 52.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
           "line": 52.5,
-          "publishedAt": "2026-07-28",
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -513,11 +512,11 @@
       "line": 62.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
-          "line": 60.5,
-          "publishedAt": "2026-07-28",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
+          "line": 62.5,
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -542,14 +541,14 @@
     {
       "teamId": "ORL",
       "season": "2026-27",
-      "line": 44.5,
+      "line": 43.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
           "line": 43.5,
-          "publishedAt": "2026-07-28",
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -568,11 +567,11 @@
       "line": 50.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
           "line": 50.5,
-          "publishedAt": "2026-07-28",
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -596,14 +595,14 @@
     {
       "teamId": "PHX",
       "season": "2026-27",
-      "line": 39.5,
+      "line": 40.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
-          "line": 38.5,
-          "publishedAt": "2026-07-28",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
+          "line": 40.5,
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -619,14 +618,14 @@
     {
       "teamId": "POR",
       "season": "2026-27",
-      "line": 41.5,
+      "line": 42.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
-          "line": 43.5,
-          "publishedAt": "2026-07-28",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
+          "line": 42.5,
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -654,11 +653,11 @@
       "line": 21.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
           "line": 21.5,
-          "publishedAt": "2026-07-28",
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -674,14 +673,14 @@
     {
       "teamId": "SAS",
       "season": "2026-27",
-      "line": 60.5,
+      "line": 59.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
           "line": 59.5,
-          "publishedAt": "2026-07-28",
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -697,14 +696,14 @@
     {
       "teamId": "TOR",
       "season": "2026-27",
-      "line": 46.5,
+      "line": 45.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
           "line": 45.5,
-          "publishedAt": "2026-07-28",
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -728,14 +727,14 @@
     {
       "teamId": "UTA",
       "season": "2026-27",
-      "line": 38.5,
+      "line": 37.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
-          "line": 35.5,
-          "publishedAt": "2026-07-28",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
+          "line": 37.5,
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {
@@ -760,14 +759,14 @@
     {
       "teamId": "WAS",
       "season": "2026-27",
-      "line": 35.5,
+      "line": 34.5,
       "sources": [
         {
-          "name": "Yahoo Sports",
+          "name": "BetMGM Blog",
           "book": "BetMGM",
-          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
-          "line": 35.5,
-          "publishedAt": "2026-07-28",
+          "url": "https://sports.betmgm.com/en/blog/nba/nba-odds-predictions-season-win-totals-bm23/",
+          "line": 34.5,
+          "publishedAt": "2026-09-23",
           "retrievedAt": "2026-09-30"
         },
         {

@@ -1,43 +1,14 @@
 import { SEASON } from "@config/season";
+import Link from "next/link";
+import { SiteHeader } from "@/components/SiteHeader";
 import { TeamBadge } from "@/components/TeamBadge";
-import { TEAMS, type Conference } from "@/data/teams";
+import { CONFERENCES, TEAMS } from "@/data/teams";
 import { tr } from "@/i18n/tr";
-import { formatDateTime } from "@/lib/datetime";
-
-const CONFERENCES: Conference[] = ["West", "East"];
-
-/** "2026-27" → "26–27" */
-function shortSeason(season: string): string {
-  return season.slice(2).replace("-", "–");
-}
 
 export default function HomePage() {
-  const lockText = formatDateTime(SEASON.lockAt, SEASON.displayTimeZone);
-
   return (
     <div className="mx-auto flex w-full max-w-[1440px] flex-1 flex-col">
-      <header className="border-border flex h-18 shrink-0 items-center justify-between gap-6 border-b px-6 lg:px-30">
-        <div className="flex items-center gap-3">
-          <span className="bg-ink text-bg font-display flex h-8 items-center rounded-lg px-2.5 text-lg font-extrabold tracking-[0.04em]">
-            {shortSeason(SEASON.id)}
-          </span>
-          <span className="font-display text-[22px] font-bold tracking-[0.08em]">
-            {tr.brand.name}
-          </span>
-        </div>
-        <div className="flex items-baseline gap-3 text-right">
-          <span className="text-ink-muted text-xs font-semibold tracking-[0.1em]">
-            {tr.home.lockLabel}
-          </span>
-          <time
-            dateTime={SEASON.lockAt}
-            className="font-display text-xl font-bold tabular-nums"
-          >
-            {lockText}
-          </time>
-          <span className="text-ink-muted text-xs">{tr.home.lockZone}</span>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="flex flex-1 flex-col gap-16 px-6 py-14 lg:px-30">
         <section className="flex flex-col gap-4">
@@ -50,15 +21,12 @@ export default function HomePage() {
           <p className="text-ink-soft mt-2 max-w-[620px] text-[17px] leading-[1.55]">
             {tr.home.lead}
           </p>
-          <p className="border-border-strong text-ink-soft mt-2 flex w-fit items-center gap-2 rounded-full border border-dashed px-3 py-1.5 text-xs">
-            <span className="font-semibold tracking-[0.08em]">
-              {tr.home.comingSoon}
-            </span>
-            <span aria-hidden="true" className="text-ink-faint">
-              ·
-            </span>
-            <span>{tr.home.comingSoonText}</span>
-          </p>
+          <Link
+            href="/siralama"
+            className="bg-ink text-bg font-display mt-4 flex h-13 w-fit items-center gap-2 rounded-xl px-7 text-xl font-extrabold tracking-[0.08em] hover:bg-white"
+          >
+            {tr.home.start}
+          </Link>
         </section>
 
         <section aria-labelledby="steps-title" className="flex flex-col gap-5">

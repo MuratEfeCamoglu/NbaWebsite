@@ -8,7 +8,7 @@ Bu dosya sitenin görsel dilini tanımlar. Kaynağı, proje klasöründeki `NBA 
 - **Tek tema: koyu.** Açık tema v1'de yok. Takım renk rozetleri koyu zeminde en iyi okunuyor.
 - **Skorbord hissi, bahis hissi değil.** Büyük, dar, kalın rakamlar; oran, kupon, "kazan" dili yok.
 - **Renk tek başına anlam taşımaz.** Alt/Üst her zaman renk + yazı + ok simgesiyle, uyarılar renk + simge + metinle gösterilir.
-- **Resmi logo, font, maskot yok.** Takımlar kısaltma + renk rozetiyle gösterilir.
+- **Takımlar gerçek logolarıyla gösterilir.** Resmi NBA fontu, maskot ve lig logosu kullanılmaz; altbilgide marka notu bulunur.
 
 ## 2. Renkler
 
@@ -32,9 +32,9 @@ Seçili satır zemini: Üst `rgba(255,138,61,0.05)`, Alt `rgba(90,174,255,0.05)`
 
 Kontrast (zemin `#070B14` üzerinde): `ink` ≈ 17:1, `ink-soft` ≈ 10:1, `ink-muted` ≈ 6.6:1 — hepsi WCAG AA. `ink-faint` ≈ 4.4:1 olduğu için gövde metninde kullanılmaz.
 
-### Takım renkleri
+### Takım renkleri ve logoları
 
-`src/data/teams.ts` → `colors.primary` / `colors.secondary`. Rozet yazı rengi elle seçilmez; `src/lib/color.ts` → `inkFor(primary)` beyaz ile koyu arasından kontrastı yüksek olanı seçer (30 takımın hepsinde ≥ 4.4:1, testle doğrulanır; ATL gibi orta ton kırmızılarda iki mürekkeple de 4.5:1'e ulaşılamıyor, bu yüzden rozet her zaman tam takım adını `aria-label` olarak taşır ve tablolarda adın yanında durur).
+`src/data/teams.ts` → `colors.primary` / `colors.secondary`. Logolar `public/logos/` altında 160 × 160 saydam PNG olarak durur ve yalnızca `TeamBadge` üzerinden gösterilir. Logolar açık zemin için tasarlandığından rozet zemini her zaman `ink` rengidir; koyu zemine doğrudan logo konmaz.
 
 ## 3. Tipografi
 
@@ -70,7 +70,7 @@ Kontrast (zemin `#070B14` üzerinde): `ink` ≈ 17:1, `ink-soft` ≈ 10:1, `ink-
 
 | Bileşen             | Tanım                                                                                                                                                 | Durum   |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| `TeamBadge`         | 48 × 48, yarıçap 12, zemin `primary`, 2 px `secondary` kenarlık, kısaltma 17 px / 800. `role="img"` + tam takım adı                                   | Faz 0 ✓ |
+| `TeamBadge`         | 48 × 48, yarıçap 12, açık (`ink`) zemin, 2 px takım `primary` kenarlık, içinde 38 px logo. `role="img"` + tam takım adı                               | Faz 0 ✓ |
 | Sezon rozeti        | `ink` zemin, `bg` yazı, "26–27"                                                                                                                       | Faz 0 ✓ |
 | `OverUnderRow`      | Sıra · rozet + şehir/ad · barem · `ALT` \| `ÜST` düğmeleri (`aria-pressed`) · 3 yıldız · projeksiyon girişi (0–82) · gerekirse satır altı uyarı       | Faz 1   |
 | `WinTotalMeter`     | Yapışkan kart: `toplam / 1230` + fark çipi, ±30 ölçeği ve işaretçi, durum başlığı (`DENGEDE` / `SAPMA YÜKSEK`). `role="status"`, `aria-live="polite"` | Faz 1   |
