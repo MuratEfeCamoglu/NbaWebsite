@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* Design tokens — see docs/TASARIM.md. The site has a single dark theme. */
+@theme {
+  --color-bg: #070b14;
+  --color-surface: #0a0f1b;
+  --color-surface-raised: #0d1322;
+  --color-surface-active: #131b2d;
+  --color-border: #1e2840;
+  --color-border-strong: #2a3654;
+
+  --color-ink: #eef2f8;
+  --color-ink-soft: #b4bfd2;
+  --color-ink-muted: #8d9ab2;
+  --color-ink-faint: #6e7c98;
+
+  --color-over: #ff8a3d;
+  --color-over-ink: #1c0d02;
+  --color-under: #5aaeff;
+  --color-under-ink: #03111f;
+  --color-warn: #ffd447;
+  --color-warn-ink: #1a1400;
+
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-barlow-condensed), "Arial Narrow", sans-serif;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 2px;
+}

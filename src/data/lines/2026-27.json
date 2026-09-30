@@ -1,0 +1,785 @@
+{
+  "season": "2026-27",
+  "isSample": false,
+  "retrievedAt": "2026-09-30",
+  "lines": [
+    {
+      "teamId": "ATL",
+      "season": "2026-27",
+      "line": 44.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 43.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 44.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "teamId": "BKN",
+      "season": "2026-27",
+      "line": 24.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 22.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 24.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "Hoops Rumors",
+          "book": "BetMGM / BetOnline",
+          "url": "https://www.hoopsrumors.com/2026/09/2026-27-nba-over-unders-atlantic-division.html",
+          "line": 24.5,
+          "publishedAt": "2026-09-25",
+          "retrievedAt": "2026-09-30"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "teamId": "BOS",
+      "season": "2026-27",
+      "line": 51.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 51.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 49.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "Hoops Rumors",
+          "book": "BetMGM / BetOnline",
+          "url": "https://www.hoopsrumors.com/2026/09/2026-27-nba-over-unders-atlantic-division.html",
+          "line": 51.5,
+          "publishedAt": "2026-09-25",
+          "retrievedAt": "2026-09-30"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "teamId": "CHA",
+      "season": "2026-27",
+      "line": 37.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 37.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 37.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "teamId": "CHI",
+      "season": "2026-27",
+      "line": 29.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 27.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 29.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "teamId": "CLE",
+      "season": "2026-27",
+      "line": 47.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 47.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 47.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "teamId": "DAL",
+      "season": "2026-27",
+      "line": 35.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 34.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 35.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "teamId": "DEN",
+      "season": "2026-27",
+      "line": 49.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 49.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 48.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "Hoops Rumors",
+          "book": "BetMGM / BetOnline",
+          "url": "https://www.hoopsrumors.com/2026/09/2026-27-nba-over-unders-northwest-division.html",
+          "line": 49.5,
+          "publishedAt": "2026-09-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "teamId": "DET",
+      "season": "2026-27",
+      "line": 49.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 50.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 49.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "teamId": "GSW",
+      "season": "2026-27",
+      "line": 39.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 40.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 39.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "teamId": "HOU",
+      "season": "2026-27",
+      "line": 46.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 47.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 46.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "teamId": "IND",
+      "season": "2026-27",
+      "line": 43.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 44.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 43.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "teamId": "LAC",
+      "season": "2026-27",
+      "line": 28.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 28.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 28.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "teamId": "LAL",
+      "season": "2026-27",
+      "line": 45.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 45.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 45.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "teamId": "MEM",
+      "season": "2026-27",
+      "line": 28.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 28.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 28.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "teamId": "MIA",
+      "season": "2026-27",
+      "line": 45.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 46.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 45.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "teamId": "MIL",
+      "season": "2026-27",
+      "line": 24.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 26.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 24.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "teamId": "MIN",
+      "season": "2026-27",
+      "line": 48.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 49.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 48.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "Hoops Rumors",
+          "book": "BetMGM / BetOnline",
+          "url": "https://www.hoopsrumors.com/2026/09/2026-27-nba-over-unders-northwest-division.html",
+          "line": 48.5,
+          "publishedAt": "2026-09-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "teamId": "NOP",
+      "season": "2026-27",
+      "line": 28.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 29.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 28.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "teamId": "NYK",
+      "season": "2026-27",
+      "line": 52.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 52.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 51.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "Hoops Rumors",
+          "book": "BetMGM / BetOnline",
+          "url": "https://www.hoopsrumors.com/2026/09/2026-27-nba-over-unders-atlantic-division.html",
+          "line": 52.5,
+          "publishedAt": "2026-09-25",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "teamId": "OKC",
+      "season": "2026-27",
+      "line": 62.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 60.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 60.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "Hoops Rumors",
+          "book": "BetMGM / BetOnline",
+          "url": "https://www.hoopsrumors.com/2026/09/2026-27-nba-over-unders-northwest-division.html",
+          "line": 62.5,
+          "publishedAt": "2026-09-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "teamId": "ORL",
+      "season": "2026-27",
+      "line": 44.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 43.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 44.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "teamId": "PHI",
+      "season": "2026-27",
+      "line": 50.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 50.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 50.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "Hoops Rumors",
+          "book": "BetMGM / BetOnline",
+          "url": "https://www.hoopsrumors.com/2026/09/2026-27-nba-over-unders-atlantic-division.html",
+          "line": 50.5,
+          "publishedAt": "2026-09-25",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "teamId": "PHX",
+      "season": "2026-27",
+      "line": 39.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 38.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 39.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "teamId": "POR",
+      "season": "2026-27",
+      "line": 41.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 43.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 43.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "Hoops Rumors",
+          "book": "BetMGM / BetOnline",
+          "url": "https://www.hoopsrumors.com/2026/09/2026-27-nba-over-unders-northwest-division.html",
+          "line": 41.5,
+          "publishedAt": "2026-09-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "teamId": "SAC",
+      "season": "2026-27",
+      "line": 21.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 21.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 21.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "teamId": "SAS",
+      "season": "2026-27",
+      "line": 60.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 59.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 60.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "teamId": "TOR",
+      "season": "2026-27",
+      "line": 46.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 45.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 45.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "Hoops Rumors",
+          "book": "BetMGM / BetOnline",
+          "url": "https://www.hoopsrumors.com/2026/09/2026-27-nba-over-unders-atlantic-division.html",
+          "line": 46.5,
+          "publishedAt": "2026-09-25",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "teamId": "UTA",
+      "season": "2026-27",
+      "line": 38.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 35.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 36.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "Hoops Rumors",
+          "book": "BetMGM / BetOnline",
+          "url": "https://www.hoopsrumors.com/2026/09/2026-27-nba-over-unders-northwest-division.html",
+          "line": 38.5,
+          "publishedAt": "2026-09-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "teamId": "WAS",
+      "season": "2026-27",
+      "line": 35.5,
+      "sources": [
+        {
+          "name": "Yahoo Sports",
+          "book": "BetMGM",
+          "url": "https://sports.yahoo.com/nba/betting/article/2026-27-nba-overunders-odds-san-antonio-spurs-have-their-highest-win-total-in-over-30-years-144456844.html",
+          "line": 35.5,
+          "publishedAt": "2026-07-28",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "name": "The Sporting News (Yahoo Sports üzerinden)",
+          "book": "FanDuel",
+          "url": "https://sports.yahoo.com/articles/nba-over-under-predictions-win-121446599.html",
+          "line": 35.5,
+          "publishedAt": "2026-07-29",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    }
+  ],
+  "todo": []
+}

@@ -1,0 +1,14 @@
+.next
+node_modules
+coverage
+playwright-report
+test-results
+package-lock.json
+next-env.d.ts
+*.html
+# Human-written project docs keep their own formatting
+CLAUDE.md
+AGENTS.md
+ISKELET.md
+# One team per line is easier to scan than the wrapped form
+src/data/teams.ts

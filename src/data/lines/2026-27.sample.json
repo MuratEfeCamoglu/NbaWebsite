@@ -1,0 +1,578 @@
+{
+  "season": "2026-27",
+  "isSample": true,
+  "retrievedAt": "2026-01-01",
+  "lines": [
+    {
+      "teamId": "ATL",
+      "season": "2026-27",
+      "line": 46.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 46.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 46.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "BKN",
+      "season": "2026-27",
+      "line": 21.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 21.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 21.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "BOS",
+      "season": "2026-27",
+      "line": 43.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 43.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 43.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "CHA",
+      "season": "2026-27",
+      "line": 30.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 30.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 30.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "CHI",
+      "season": "2026-27",
+      "line": 33.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 33.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 33.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "CLE",
+      "season": "2026-27",
+      "line": 54.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 54.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 54.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "DAL",
+      "season": "2026-27",
+      "line": 41.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 41.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 41.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "DEN",
+      "season": "2026-27",
+      "line": 53.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 53.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 53.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "DET",
+      "season": "2026-27",
+      "line": 48.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 48.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 48.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "GSW",
+      "season": "2026-27",
+      "line": 45.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 45.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 45.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "HOU",
+      "season": "2026-27",
+      "line": 53.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 53.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 53.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "IND",
+      "season": "2026-27",
+      "line": 36.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 36.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 36.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "LAC",
+      "season": "2026-27",
+      "line": 44.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 44.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 44.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "LAL",
+      "season": "2026-27",
+      "line": 47.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 47.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 47.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "MEM",
+      "season": "2026-27",
+      "line": 40.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 40.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 40.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "MIA",
+      "season": "2026-27",
+      "line": 39.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 39.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 39.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "MIL",
+      "season": "2026-27",
+      "line": 40.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 40.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 40.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "MIN",
+      "season": "2026-27",
+      "line": 49.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 49.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 49.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "NOP",
+      "season": "2026-27",
+      "line": 29.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 29.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 29.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "NYK",
+      "season": "2026-27",
+      "line": 52.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 52.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 52.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "OKC",
+      "season": "2026-27",
+      "line": 62.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 62.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 62.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "ORL",
+      "season": "2026-27",
+      "line": 50.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 50.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 50.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "PHI",
+      "season": "2026-27",
+      "line": 42.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 42.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 42.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "PHX",
+      "season": "2026-27",
+      "line": 35.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 35.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 35.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "POR",
+      "season": "2026-27",
+      "line": 36.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 36.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 36.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "SAC",
+      "season": "2026-27",
+      "line": 34.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 34.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 34.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "SAS",
+      "season": "2026-27",
+      "line": 46.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 46.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 46.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "TOR",
+      "season": "2026-27",
+      "line": 37.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 37.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 37.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "UTA",
+      "season": "2026-27",
+      "line": 20.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 20.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 20.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "teamId": "WAS",
+      "season": "2026-27",
+      "line": 22.5,
+      "sources": [
+        {
+          "name": "SAMPLE source A",
+          "url": "https://example.com/sample-a",
+          "line": 22.5,
+          "retrievedAt": "2026-01-01"
+        },
+        {
+          "name": "SAMPLE source B",
+          "url": "https://example.com/sample-b",
+          "line": 22.5,
+          "retrievedAt": "2026-01-01"
+        }
+      ]
+    }
+  ],
+  "todo": []
+}
