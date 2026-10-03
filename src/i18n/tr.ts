@@ -82,6 +82,14 @@ export const tr = {
     moveDown: (team: string) => `${team} takımını bir sıra aşağı taşı`,
     reset: "ALFABETİK SIRAYA DÖN",
     resetShort: "SIFIRLA",
+    projection: (wins: number) => `Galibiyet tahminin: ${wins}`,
+    conflictMark: "Daha az galibiyet tahmin ettiğin bir takımın altında",
+    conflictTitle: "SIRALAMAN TAHMİNLERİNLE ÇELİŞİYOR",
+    conflictItem: (team: string, wins: number, above: string, count: number) =>
+      `${team} (${wins}), daha az galibiyet verdiğin ${above} ${count > 1 ? "takımlarının" : "takımının"} altında.`,
+    sortByProjection: "TAHMİNLERE GÖRE DİZ",
+    sortHint:
+      "Galibiyet tahmini girdiğin takımlar tahmine göre dizilir; tahmini olmayanlar yerinde kalır.",
     unsaved: "Henüz sıralama yapmadın; takımlar alfabetik duruyor.",
     saved: "Sıralaman kaydedildi.",
     next: "ALT / ÜST'E GEÇ",
@@ -158,6 +166,8 @@ export const tr = {
         "Henüz sıralama yapmadın; takımlar alfabetik ve sıra numarasız görünüyor.",
       incomplete: (left: number) =>
         `${left} takım için Alt/Üst seçmedin. Boş bırakabilirsin; o takımlardan puan alamazsın.`,
+      ranking: (team: string, wins: number, above: string, count: number) =>
+        `${team}: ${wins} galibiyet tahmin ettin ama sıralamada daha az tahmin verdiğin ${above} ${count > 1 ? "takımlarının" : "takımının"} altında.`,
       total: (deviation: number) =>
         `Galibiyet toplamın ligdeki toplamdan ${Math.abs(deviation)} ${deviation > 0 ? "fazla" : "eksik"}.`,
     },

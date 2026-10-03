@@ -20,7 +20,7 @@ Bu dosya projenin **neyi yapıp neyi yapmayacağını** tanımlar. `CLAUDE.md` "
 - [x] **Alt/Üst sayfası:** her takım için çizgi göster, Alt veya Üst seç, 1–3 güven puanı ver; konferansa göre gruplu, sıra numarası konferans içi (1–15); Batı / Doğu / Tümü filtresi
 - [x] **Projeksiyon girişi (opsiyonel):** her takıma 0–82 arası galibiyet tahmini
 - [x] **Toplam galibiyet göstergesi:** projeksiyon toplamı / 1230, sapma uyarısı
-- [ ] **Tutarlılık uyarısı:** Kullanıcı aynı konferansta bir takımı üst sıraya koyup alt sıradaki takımdan belirgin düşük projeksiyon girdiyse nazikçe işaret et
+- [x] **Tutarlılık uyarısı:** Kullanıcı aynı konferansta bir takımı üst sıraya koyup alt sıradaki takımdan belirgin düşük projeksiyon girdiyse nazikçe işaret et
 - [x] Tahminler tarayıcıda (`localStorage`) saklanır
 - [ ] **Paylaşım:** tahmin, URL içinde sıkıştırılmış olarak kodlanır → salt okunur paylaşım sayfası
 - [x] **Özet sayfası:** istatistikler, uyarılar, konferans bazında tüm tahminler

@@ -191,3 +191,37 @@ test.describe("alt / üst", () => {
     });
   }
 });
+
+test.describe("sıralama ↔ tahmin tutarlılığı", () => {
+  test("flags a team ranked under lower projections and sorts by them", async ({
+    page,
+  }) => {
+    await page.goto("/alt-ust");
+    // Alphabetical East starts ATL, BOS, BKN: give BKN more wins than ATL.
+    await page
+      .locator('li[data-team="ATL"]')
+      .getByRole("spinbutton")
+      .fill("35");
+    await page
+      .locator('li[data-team="BKN"]')
+      .getByRole("spinbutton")
+      .fill("38");
+
+    await page.goto("/siralama");
+    await expect(
+      page.getByText(
+        "Nets (38), daha az galibiyet verdiğin Hawks (35) takımının altında",
+      ),
+    ).toBeVisible();
+
+    await page.getByRole("button", { name: "TAHMİNLERE GÖRE DİZ" }).click();
+    expect((await order(page, "Doğu")).slice(0, 3)).toEqual([
+      "BKN",
+      "BOS",
+      "ATL",
+    ]);
+    await expect(
+      page.getByText("SIRALAMAN TAHMİNLERİNLE ÇELİŞİYOR"),
+    ).toHaveCount(0);
+  });
+});

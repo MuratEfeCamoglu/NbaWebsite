@@ -20,11 +20,16 @@ import {
 import { TeamBadge } from "@/components/TeamBadge";
 import { getTeam, type Conference, type TeamId } from "@/data/teams";
 import { tr } from "@/i18n/tr";
+import { WarnIcon } from "@/components/WarnIcon";
+import { rankingConflicts } from "@/lib/consistency";
 import { moveTeam } from "@/lib/ranking";
+import type { Draft } from "@/lib/validation";
 
 interface RankingListProps {
   conference: Conference;
   order: readonly TeamId[];
+  /** Projections are shown next to each team and checked against the order. */
+  picks: Draft["picks"];
   onChange: (order: TeamId[]) => void;
   disabled: boolean;
 }
@@ -37,9 +42,13 @@ function teamLabel(teamId: UniqueIdentifier): string {
 export function RankingList({
   conference,
   order,
+  picks,
   onChange,
   disabled,
 }: RankingListProps) {
+  const conflicted = new Set(
+    rankingConflicts(order, picks).map((conflict) => conflict.teamId),
+  );
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 4 } }),
     useSensor(KeyboardSensor, {
@@ -103,6 +112,8 @@ export function RankingList({
               key={teamId}
               teamId={teamId}
               rank={index + 1}
+              projectedWins={picks[teamId]?.projectedWins}
+              conflict={conflicted.has(teamId)}
               isFirst={index === 0}
               isLast={index === order.length - 1}
               disabled={disabled}
@@ -120,6 +131,8 @@ export function RankingList({
 interface RankingRowProps {
   teamId: TeamId;
   rank: number;
+  projectedWins: number | undefined;
+  conflict: boolean;
   isFirst: boolean;
   isLast: boolean;
   disabled: boolean;
@@ -129,6 +142,8 @@ interface RankingRowProps {
 function RankingRow({
   teamId,
   rank,
+  projectedWins,
+  conflict,
   isFirst,
   isLast,
   disabled,
@@ -197,6 +212,21 @@ function RankingRow({
           {team.name}
         </span>
       </span>
+      {projectedWins !== undefined && (
+        <span
+          title={conflict ? tr.ranking.conflictMark : undefined}
+          className={`font-display flex w-9 shrink-0 flex-col items-end text-xl leading-none font-bold tabular-nums sm:w-10 sm:text-2xl ${
+            conflict ? "text-warn" : "text-ink-soft"
+          }`}
+        >
+          {conflict && <WarnIcon size={14} />}
+          <span aria-hidden="true">{projectedWins}</span>
+          <span className="sr-only">
+            {tr.ranking.projection(projectedWins)}
+            {conflict && `. ${tr.ranking.conflictMark}`}
+          </span>
+        </span>
+      )}
       <span className="flex shrink-0">
         <MoveButton
           label={tr.ranking.moveUp(label)}
@@ -232,7 +262,7 @@ function MoveButton({
       aria-label={label}
       disabled={disabled}
       onClick={onClick}
-      className="text-ink-soft hover:bg-surface-active hover:text-ink flex size-11 items-center justify-center rounded-lg disabled:opacity-25 disabled:hover:bg-transparent"
+      className="text-ink-soft hover:bg-surface-active hover:text-ink flex h-11 w-9 items-center justify-center rounded-lg sm:w-11 disabled:opacity-25 disabled:hover:bg-transparent"
     >
       <svg
         width="16"

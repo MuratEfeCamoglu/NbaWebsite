@@ -9,7 +9,7 @@ import { ViewToggle } from "@/components/ViewToggle";
 import { WinTotalMeter } from "@/components/WinTotalMeter";
 import { useDraft, useViewMode } from "@/components/useDraft";
 import { WIN_LINES } from "@/data/lines";
-import { CONFERENCES, getTeam } from "@/data/teams";
+import { CONFERENCES, getTeam, type TeamId } from "@/data/teams";
 import { tr } from "@/i18n/tr";
 import {
   buildSummary,
@@ -17,7 +17,9 @@ import {
   type Summary,
   type SummaryRow,
 } from "@/lib/summary";
+import { describeAbove, rankingConflicts } from "@/lib/consistency";
 import { formatLine } from "@/lib/totals";
+import type { Draft } from "@/lib/validation";
 
 const STAR_PATH =
   "M12 2.8l2.83 5.73 6.33.92-4.58 4.46 1.08 6.3L12 17.24l-5.66 2.97 1.08-6.3-4.58-4.46 6.33-.92z";
@@ -60,7 +62,7 @@ export function SummaryBoard() {
           />
         </dl>
 
-        <Warnings summary={summary} />
+        <Warnings summary={summary} draft={draft} />
 
         <div className="flex">
           <ViewToggle />
@@ -175,7 +177,7 @@ function Stat({
   );
 }
 
-function Warnings({ summary }: { summary: Summary }) {
+function Warnings({ summary, draft }: { summary: Summary; draft: Draft }) {
   const items: string[] = [];
   if (!summary.ranked) items.push(tr.summary.warn.unranked);
   if (summary.pickedCount < summary.teamCount) {
@@ -185,6 +187,25 @@ function Warnings({ summary }: { summary: Summary }) {
   }
   if (summary.totalStatus.level === "off") {
     items.push(tr.summary.warn.total(summary.totalStatus.deviation));
+  }
+  if (draft.ranking) {
+    const nameOf = (teamId: TeamId) => getTeam(teamId).name;
+    for (const conference of CONFERENCES) {
+      for (const conflict of rankingConflicts(
+        draft.ranking[conference],
+        draft.picks,
+      )) {
+        const team = getTeam(conflict.teamId);
+        items.push(
+          tr.summary.warn.ranking(
+            `${team.city} ${team.name}`,
+            conflict.projectedWins,
+            describeAbove(conflict, nameOf),
+            conflict.above.length,
+          ),
+        );
+      }
+    }
   }
   for (const row of summary.conflicts) {
     if (row.conflict && row.projectedWins !== undefined) {

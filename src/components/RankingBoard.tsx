@@ -9,11 +9,23 @@ import {
 import { DownloadImageButton } from "@/components/DownloadImageButton";
 import { LockNotice } from "@/components/LockNotice";
 import { RankingList } from "@/components/RankingList";
+import { WarnIcon } from "@/components/WarnIcon";
 import { useDraft, useIsLocked } from "@/components/useDraft";
-import { CONFERENCES, type Conference, type TeamId } from "@/data/teams";
+import {
+  CONFERENCES,
+  getTeam,
+  type Conference,
+  type TeamId,
+} from "@/data/teams";
 import { tr } from "@/i18n/tr";
+import {
+  describeAbove,
+  rankingConflicts,
+  sortByProjection,
+} from "@/lib/consistency";
 import { setRanking } from "@/lib/draft";
 import { defaultRanking } from "@/lib/ranking";
+import type { Draft } from "@/lib/validation";
 
 const DEFAULT_RANKING = defaultRanking();
 
@@ -29,6 +41,16 @@ export function RankingBoard() {
         [conference]: order,
       }),
     );
+  }
+
+  function sortConference(conference: Conference) {
+    update((current) => {
+      const base = current.ranking ?? DEFAULT_RANKING;
+      return setRanking(current, {
+        ...base,
+        [conference]: sortByProjection(base[conference], current.picks),
+      });
+    });
   }
 
   return (
@@ -51,9 +73,16 @@ export function RankingBoard() {
                   {tr.conference.suffix}
                 </span>
               </h2>
+              <ConflictNotice
+                order={ranking[conference]}
+                picks={draft.picks}
+                disabled={locked}
+                onSort={() => sortConference(conference)}
+              />
               <RankingList
                 conference={conference}
                 order={ranking[conference]}
+                picks={draft.picks}
                 onChange={(order) => changeConference(conference, order)}
                 disabled={locked}
               />
@@ -111,5 +140,53 @@ export function RankingBoard() {
         </Link>
       </ActionBar>
     </>
+  );
+}
+
+function ConflictNotice({
+  order,
+  picks,
+  disabled,
+  onSort,
+}: {
+  order: readonly TeamId[];
+  picks: Draft["picks"];
+  disabled: boolean;
+  onSort: () => void;
+}) {
+  const conflicts = rankingConflicts(order, picks);
+  if (conflicts.length === 0) return null;
+  const nameOf = (teamId: TeamId) => getTeam(teamId).name;
+
+  return (
+    <div className="border-warn/40 bg-warn/8 flex flex-col gap-3 rounded-2xl border px-4 py-3.5 text-sm leading-[1.45] text-[#F3E7B8]">
+      <p className="font-display text-warn flex items-center gap-2 text-lg font-bold tracking-[0.06em]">
+        <WarnIcon />
+        {tr.ranking.conflictTitle}
+      </p>
+      <ul className="flex list-disc flex-col gap-1 pl-5">
+        {conflicts.map((conflict) => (
+          <li key={conflict.teamId}>
+            {tr.ranking.conflictItem(
+              nameOf(conflict.teamId),
+              conflict.projectedWins,
+              describeAbove(conflict, nameOf),
+              conflict.above.length,
+            )}
+          </li>
+        ))}
+      </ul>
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+        <button
+          type="button"
+          onClick={onSort}
+          disabled={disabled}
+          className="bg-warn text-warn-ink font-display flex h-11 items-center rounded-xl px-4 text-base font-extrabold tracking-[0.06em] disabled:opacity-40"
+        >
+          {tr.ranking.sortByProjection}
+        </button>
+        <span className="text-ink-soft text-[13px]">{tr.ranking.sortHint}</span>
+      </div>
+    </div>
   );
 }
