@@ -126,4 +126,23 @@ test.describe("mobil", () => {
     await dialog.getByRole("button", { name: "Önizlemeyi kapat" }).click();
     await expect(dialog).toBeHidden();
   });
+
+  test("shows why the image failed instead of doing nothing", async ({
+    page,
+  }) => {
+    await page.addInitScript(() => {
+      HTMLCanvasElement.prototype.toBlob = function (callback) {
+        callback(null);
+      };
+    });
+    await page.goto("/ozet");
+    await page.getByRole("button", { name: "TÜMÜNÜ İNDİR" }).click();
+
+    const alert = page.getByRole("dialog").getByRole("alert");
+    await expect(alert).toContainText("Resim oluşturulamadı");
+    await expect(alert).toContainText("PNG export failed");
+    await expect(
+      alert.getByRole("button", { name: "TEKRAR DENE" }),
+    ).toBeVisible();
+  });
 });

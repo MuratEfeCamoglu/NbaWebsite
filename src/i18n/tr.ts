@@ -177,6 +177,8 @@ export const tr = {
     downloadHint:
       "Tahminini PNG resim olarak indir: tümü tek resimde ya da sıralama ve Alt/Üst ayrı ayrı.",
     downloadError: "Resim oluşturulamadı. Lütfen tekrar dene.",
+    retry: "TEKRAR DENE",
+    preparing: "Resim hazırlanıyor…",
     share: "PAYLAŞ / KAYDET",
     save: "İNDİR",
     previewClose: "Önizlemeyi kapat",

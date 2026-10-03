@@ -82,7 +82,33 @@ function fontFamilies() {
   };
 }
 
+/**
+ * Resolves with `fallback` if `promise` takes longer than `ms`. A slow font or
+ * logo request on a phone must not leave the download hanging forever.
+ */
+function withTimeout<T>(
+  promise: Promise<T>,
+  ms: number,
+  fallback: T,
+): Promise<T> {
+  return Promise.race([
+    promise.catch(() => fallback),
+    new Promise<T>((resolve) => window.setTimeout(() => resolve(fallback), ms)),
+  ]);
+}
+
+const ASSET_TIMEOUT_MS = 5_000;
+
+function loadFont(font: string): Promise<unknown> {
+  if (!document.fonts?.load) return Promise.resolve();
+  return withTimeout(document.fonts.load(font), ASSET_TIMEOUT_MS, undefined);
+}
+
 function loadLogo(teamId: string): Promise<HTMLImageElement | null> {
+  return withTimeout(loadLogoImage(teamId), ASSET_TIMEOUT_MS, null);
+}
+
+function loadLogoImage(teamId: string): Promise<HTMLImageElement | null> {
   return new Promise((resolve) => {
     const image = new Image();
     image.onload = () => resolve(image);
@@ -111,11 +137,11 @@ export async function renderSummaryImage(
   const rows = columns.flat().flatMap((section) => section.rows);
   const [logos] = await Promise.all([
     Promise.all(rows.map((row) => loadLogo(row.teamId))),
-    document.fonts.load(display(800, 40)),
-    document.fonts.load(display(700, 40)),
-    document.fonts.load(display(600, 40)),
-    document.fonts.load(sans(500, 14)),
-    document.fonts.load(sans(600, 14)),
+    loadFont(display(800, 40)),
+    loadFont(display(700, 40)),
+    loadFont(display(600, 40)),
+    loadFont(sans(500, 14)),
+    loadFont(sans(600, 14)),
   ]);
   const logoByTeam = new Map(
     rows.map((row, index) => [row.teamId, logos[index]]),
