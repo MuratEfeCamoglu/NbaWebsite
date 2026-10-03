@@ -2,6 +2,11 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import {
+  ACTION_BUTTON,
+  ACTION_PRIMARY,
+  ActionBar,
+} from "@/components/ActionBar";
 import { DownloadImageButton } from "@/components/DownloadImageButton";
 import { LockNotice } from "@/components/LockNotice";
 import { OverUnderRow, ROW_GRID } from "@/components/OverUnderRow";
@@ -41,11 +46,11 @@ export function OverUnderBoard() {
 
   return (
     <>
-      <div className="bg-bg top-0 z-20 px-6 pt-3 pb-5 lg:sticky lg:px-30">
+      <div className="bg-bg top-0 z-20 px-4 pt-3 pb-5 sm:px-6 lg:sticky lg:px-30">
         <WinTotalMeter total={summary.total} />
       </div>
 
-      <div className="flex flex-col gap-4 px-6 lg:px-30">
+      <div className="flex flex-col gap-4 px-4 sm:px-6 lg:px-30">
         {locked && <LockNotice />}
         {!summary.ranked && (
           <p className="text-ink-soft text-sm">
@@ -71,7 +76,7 @@ export function OverUnderBoard() {
                     type="button"
                     aria-pressed={selected}
                     onClick={() => setFilter(option)}
-                    className={`font-display flex h-11 items-center gap-2 rounded-[9px] px-5 text-lg font-bold tracking-[0.08em] ${
+                    className={`font-display flex h-11 items-center gap-2 rounded-[9px] px-3.5 text-lg sm:px-5 font-bold tracking-[0.08em] ${
                       selected
                         ? "bg-ink text-bg"
                         : "text-ink-soft hover:text-ink"
@@ -100,7 +105,7 @@ export function OverUnderBoard() {
             </span>
             <div
               aria-hidden="true"
-              className="bg-border h-1.5 w-50 overflow-hidden rounded-full"
+              className="bg-border h-1.5 w-24 overflow-hidden rounded-full sm:w-50"
             >
               <div
                 className="bg-ink h-1.5 rounded-full"
@@ -119,7 +124,7 @@ export function OverUnderBoard() {
               aria-labelledby={`picks-title-${section.id}`}
               className="flex flex-col gap-3.5"
             >
-              <div className="flex items-baseline justify-between">
+              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                 <SectionTitle
                   id={`picks-title-${section.id}`}
                   section={section}
@@ -135,7 +140,7 @@ export function OverUnderBoard() {
               <div className="border-border bg-surface overflow-hidden rounded-2xl border">
                 <div
                   aria-hidden="true"
-                  className={`${ROW_GRID} border-border bg-surface-raised text-ink-muted h-12 border-b text-xs font-semibold tracking-[0.14em]`}
+                  className={`${ROW_GRID} border-border bg-surface-raised text-ink-muted hidden h-12 border-b text-xs font-semibold tracking-[0.14em] md:grid`}
                 >
                   <div className="text-right">{tr.picks.columns.rank}</div>
                   <div>{tr.picks.columns.team}</div>
@@ -182,52 +187,46 @@ export function OverUnderBoard() {
 
       <div className="flex-1" />
 
-      <div className="border-border bg-bg sticky bottom-0 z-20 mt-10 flex flex-wrap items-center justify-between gap-4 border-t px-6 py-5 lg:px-30">
-        <p role="status" className="text-ink-soft text-sm">
-          {tr.picks.remaining(summary.teamCount - summary.pickedCount)}
-        </p>
-        <div className="flex flex-wrap gap-3">
-          <Link
-            href="/siralama"
-            className="border-border-strong font-display hover:bg-surface-active flex h-13 items-center gap-2 rounded-xl border px-6 text-xl font-bold tracking-[0.08em]"
+      <ActionBar
+        status={tr.picks.remaining(summary.teamCount - summary.pickedCount)}
+      >
+        <Link href="/siralama" className={ACTION_BUTTON}>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
           >
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M19 12H5M11 6l-6 6 6 6" />
-            </svg>
-            {tr.picks.back}
-          </Link>
-          <DownloadImageButton variant="picks" />
-          <Link
-            href="/ozet"
-            className="bg-ink text-bg font-display flex h-13 items-center gap-2 rounded-xl px-7 text-xl font-extrabold tracking-[0.08em] hover:bg-white"
+            <path d="M19 12H5M11 6l-6 6 6 6" />
+          </svg>
+          <span className="max-sm:sr-only">{tr.picks.back}</span>
+        </Link>
+        <DownloadImageButton
+          variant="picks"
+          shortLabel={tr.summary.downloadShort}
+        />
+        <Link href="/ozet" className={ACTION_PRIMARY}>
+          {tr.picks.next}
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
           >
-            {tr.picks.next}
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg>
-          </Link>
-        </div>
-      </div>
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </Link>
+      </ActionBar>
     </>
   );
 }

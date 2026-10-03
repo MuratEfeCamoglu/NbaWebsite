@@ -155,7 +155,7 @@ function RankingRow({
           : undefined,
         transition,
       }}
-      className={`border-border flex h-16 items-center gap-3 border-b px-3 last:border-b-0 ${
+      className={`border-border flex h-16 items-center gap-2 border-b px-1.5 last:border-b-0 sm:gap-3 sm:px-3 ${
         isDragging
           ? "bg-surface-active relative z-10 shadow-[0_8px_24px_rgba(0,0,0,0.5)]"
           : "bg-surface"
@@ -179,7 +179,7 @@ function RankingRow({
           ))}
         </svg>
       </button>
-      <span className="font-display text-ink-muted w-8 shrink-0 text-right text-3xl font-bold tabular-nums">
+      <span className="font-display text-ink-muted w-6 shrink-0 text-right text-2xl font-bold tabular-nums sm:w-8 sm:text-3xl">
         {rank}
       </span>
       <TeamBadge teamId={teamId} />
@@ -192,7 +192,7 @@ function RankingRow({
         </span>
         <span
           lang="en"
-          className="font-display truncate text-2xl leading-none font-bold tracking-[0.03em] uppercase"
+          className="font-display truncate text-xl leading-none font-bold tracking-[0.03em] uppercase sm:text-2xl"
         >
           {team.name}
         </span>

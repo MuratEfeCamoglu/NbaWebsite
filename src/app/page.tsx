@@ -10,20 +10,20 @@ export default function HomePage() {
     <div className="mx-auto flex w-full max-w-[1440px] flex-1 flex-col">
       <SiteHeader />
 
-      <main className="flex flex-1 flex-col gap-16 px-6 py-14 lg:px-30">
+      <main className="flex flex-1 flex-col gap-12 px-4 py-8 sm:gap-16 sm:px-6 sm:py-14 lg:px-30">
         <section className="flex flex-col gap-4">
           <p className="text-ink-muted text-[13px] font-semibold tracking-[0.14em]">
             {tr.home.eyebrow(SEASON.id)}
           </p>
-          <h1 className="font-display max-w-[900px] text-7xl leading-[0.9] font-extrabold tracking-[0.01em] lg:text-8xl">
+          <h1 className="font-display max-w-[900px] text-6xl leading-[0.9] font-extrabold tracking-[0.01em] sm:text-7xl lg:text-8xl">
             {tr.home.title}
           </h1>
-          <p className="text-ink-soft mt-2 max-w-[620px] text-[17px] leading-[1.55]">
+          <p className="text-ink-soft mt-2 max-w-[620px] text-[15px] leading-[1.55] sm:text-[17px]">
             {tr.home.lead}
           </p>
           <Link
             href="/siralama"
-            className="bg-ink text-bg font-display mt-4 flex h-13 w-fit items-center gap-2 rounded-xl px-7 text-xl font-extrabold tracking-[0.08em] hover:bg-white"
+            className="bg-ink text-bg font-display mt-4 flex h-13 w-full items-center justify-center gap-2 rounded-xl px-7 sm:w-fit text-xl font-extrabold tracking-[0.08em] hover:bg-white"
           >
             {tr.home.start}
           </Link>
@@ -40,7 +40,7 @@ export default function HomePage() {
             {tr.home.steps.map((step) => (
               <li
                 key={step.number}
-                className="border-border bg-surface-raised flex flex-col gap-2 rounded-2xl border p-6"
+                className="border-border bg-surface-raised flex flex-col gap-2 rounded-2xl border p-5 sm:p-6"
               >
                 <span className="font-display text-ink-faint text-3xl font-bold tabular-nums">
                   {step.number}
@@ -72,7 +72,7 @@ export default function HomePage() {
             {CONFERENCES.map((conference) => (
               <div
                 key={conference}
-                className="border-border bg-surface flex flex-col gap-5 rounded-2xl border p-6"
+                className="border-border bg-surface flex flex-col gap-5 rounded-2xl border p-4 sm:p-6"
               >
                 <h3 className="font-display flex items-baseline gap-3 text-4xl leading-none font-extrabold tracking-[0.04em]">
                   {tr.conference[conference]}
@@ -80,7 +80,7 @@ export default function HomePage() {
                     {tr.conference.suffix}
                   </span>
                 </h3>
-                <ul className="flex flex-wrap gap-3">
+                <ul className="flex flex-wrap gap-2.5 sm:gap-3">
                   {TEAMS.filter((team) => team.conference === conference).map(
                     (team) => (
                       <li key={team.id}>
@@ -95,7 +95,7 @@ export default function HomePage() {
         </section>
       </main>
 
-      <footer className="border-border text-ink-muted flex flex-col gap-1 border-t px-6 py-6 text-[13px] leading-[1.5] lg:px-30">
+      <footer className="border-border text-ink-muted flex flex-col gap-1 border-t px-4 py-6 text-[13px] leading-[1.5] sm:px-6 lg:px-30">
         <p>{tr.footer.disclaimer}</p>
         <p>{tr.footer.unofficial}</p>
       </footer>

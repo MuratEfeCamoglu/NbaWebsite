@@ -13,7 +13,7 @@ export function WinTotalMeter({ total }: { total: number }) {
     <div
       role="status"
       aria-live="polite"
-      className={`grid items-center gap-x-10 gap-y-4 rounded-2xl border px-7 py-5 lg:grid-cols-[300px_minmax(0,1fr)_360px] ${
+      className={`grid items-center gap-x-10 gap-y-4 rounded-2xl border px-4 py-4 sm:px-7 sm:py-5 lg:grid-cols-[300px_minmax(0,1fr)_360px] ${
         off ? "border-warn/55 bg-[#15130C]" : "border-border bg-surface-raised"
       }`}
     >
@@ -24,7 +24,7 @@ export function WinTotalMeter({ total }: { total: number }) {
         <div className="font-display flex items-baseline gap-2.5 font-extrabold tabular-nums">
           <span
             data-testid="win-total"
-            className={`text-6xl leading-none ${off ? "text-warn" : "text-ink"}`}
+            className={`text-5xl leading-none sm:text-6xl ${off ? "text-warn" : "text-ink"}`}
           >
             {total}
           </span>

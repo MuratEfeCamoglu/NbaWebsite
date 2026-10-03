@@ -17,6 +17,7 @@ export const tr = {
   },
   lock: {
     label: "TAHMİNLER KİLİTLENİR",
+    shortLabel: "KİLİT",
     zone: "Türkiye saati",
     lockedTitle: "TAHMİNLER KİLİTLENDİ",
     lockedText: "Sezon başladı; tahminler artık değiştirilemez.",
@@ -80,6 +81,7 @@ export const tr = {
     moveUp: (team: string) => `${team} takımını bir sıra yukarı taşı`,
     moveDown: (team: string) => `${team} takımını bir sıra aşağı taşı`,
     reset: "ALFABETİK SIRAYA DÖN",
+    resetShort: "SIFIRLA",
     unsaved: "Henüz sıralama yapmadın; takımlar alfabetik duruyor.",
     saved: "Sıralaman kaydedildi.",
     next: "ALT / ÜST'E GEÇ",
@@ -160,15 +162,26 @@ export const tr = {
         `Galibiyet toplamın ligdeki toplamdan ${Math.abs(deviation)} ${deviation > 0 ? "fazla" : "eksik"}.`,
     },
     back: "ALT / ÜST",
+    downloadShort: "İNDİR",
     download: {
       all: "TÜMÜNÜ İNDİR",
       ranking: "SIRALAMAYI İNDİR",
       picks: "ALT / ÜST'Ü İNDİR",
     },
+    downloadVariantShort: {
+      all: "TÜMÜ",
+      ranking: "SIRALAMA",
+      picks: "ALT / ÜST",
+    },
     downloading: "HAZIRLANIYOR…",
     downloadHint:
       "Tahminini PNG resim olarak indir: tümü tek resimde ya da sıralama ve Alt/Üst ayrı ayrı.",
     downloadError: "Resim oluşturulamadı. Lütfen tekrar dene.",
+    share: "PAYLAŞ / KAYDET",
+    save: "İNDİR",
+    previewClose: "Önizlemeyi kapat",
+    previewHint:
+      "Paylaş menüsünden resmi kaydedebilir ya da gönderebilirsin. Olmazsa resme basılı tutup kaydet.",
     fileName: {
       all: (season: string) => `nba-tahmin-${season}.png`,
       ranking: (season: string) => `nba-siralama-${season}.png`,

@@ -13,15 +13,15 @@ export function PageIntro({
   aside?: ReactNode;
 }) {
   return (
-    <section className="flex flex-wrap items-end justify-between gap-x-12 gap-y-6 px-6 pt-14 pb-8 lg:px-30">
+    <section className="flex flex-wrap items-end justify-between gap-x-12 gap-y-6 px-4 pt-8 pb-6 sm:px-6 sm:pt-14 sm:pb-8 lg:px-30">
       <div className="flex flex-col gap-3">
         <p className="text-ink-muted text-[13px] font-semibold tracking-[0.14em]">
           {step}
         </p>
-        <h1 className="font-display text-7xl leading-[0.9] font-extrabold tracking-[0.01em] lg:text-8xl">
+        <h1 className="font-display text-6xl leading-[0.9] font-extrabold tracking-[0.01em] sm:text-7xl lg:text-8xl">
           {title}
         </h1>
-        <p className="text-ink-soft mt-2 max-w-[620px] text-[17px] leading-[1.55]">
+        <p className="text-ink-soft mt-1 max-w-[620px] text-[15px] leading-[1.55] sm:mt-2 sm:text-[17px]">
           {lead}
         </p>
       </div>

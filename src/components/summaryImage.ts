@@ -143,7 +143,18 @@ export async function renderSummaryImage(
     radius: number,
   ) => {
     ctx.beginPath();
-    ctx.roundRect(left, top, w, h, radius);
+    // Older iOS Safari (< 16) has no roundRect; trace the corners by hand.
+    if (typeof ctx.roundRect === "function") {
+      ctx.roundRect(left, top, w, h, radius);
+      return;
+    }
+    const r = Math.min(radius, w / 2, h / 2);
+    ctx.moveTo(left + r, top);
+    ctx.arcTo(left + w, top, left + w, top + h, r);
+    ctx.arcTo(left + w, top + h, left, top + h, r);
+    ctx.arcTo(left, top + h, left, top, r);
+    ctx.arcTo(left, top, left + w, top, r);
+    ctx.closePath();
   };
 
   ctx.fillStyle = COLOR.bg;
@@ -416,14 +427,43 @@ export async function renderSummaryImage(
   });
 }
 
-/** Saves a blob through a temporary download link. */
+/**
+ * Saves a blob through a temporary download link. The object URL is revoked
+ * later, not right after the click: mobile Safari and some Android browsers
+ * start reading it asynchronously and fail on an already revoked URL.
+ */
 export function downloadBlob(blob: Blob, fileName: string): void {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
   link.download = fileName;
+  link.rel = "noopener";
   document.body.appendChild(link);
   link.click();
   link.remove();
-  URL.revokeObjectURL(url);
+  window.setTimeout(() => URL.revokeObjectURL(url), 60_000);
+}
+
+/** true on phones and tablets, where a plain download link is unreliable. */
+export function prefersShareSheet(): boolean {
+  return window.matchMedia("(pointer: coarse)").matches;
+}
+
+/**
+ * Opens the system share sheet with the image (Save Image, Photos, WhatsApp…).
+ * Returns false when the browser cannot share files, so the caller can fall
+ * back to a download; a share the user cancels counts as handled.
+ */
+export async function shareImage(
+  blob: Blob,
+  fileName: string,
+): Promise<boolean> {
+  const file = new File([blob], fileName, { type: "image/png" });
+  if (!navigator.canShare?.({ files: [file] })) return false;
+  try {
+    await navigator.share({ files: [file] });
+    return true;
+  } catch (error) {
+    return error instanceof DOMException && error.name === "AbortError";
+  }
 }

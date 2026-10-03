@@ -24,7 +24,7 @@ export function ViewToggle() {
             type="button"
             aria-pressed={selected}
             onClick={() => setMode(option)}
-            className={`font-display flex h-11 items-center rounded-[9px] px-5 text-lg font-bold tracking-[0.08em] ${
+            className={`font-display flex h-11 items-center rounded-[9px] px-3.5 text-lg font-bold sm:px-5 tracking-[0.08em] ${
               selected ? "bg-ink text-bg" : "text-ink-soft hover:text-ink"
             }`}
           >

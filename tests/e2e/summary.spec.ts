@@ -81,3 +81,49 @@ test.describe("özet", () => {
     });
   }
 });
+
+test.describe("mobil", () => {
+  test.use({
+    viewport: { width: 360, height: 740 },
+    hasTouch: true,
+    isMobile: true,
+  });
+
+  for (const path of ["/", "/siralama", "/alt-ust", "/ozet"]) {
+    test(`no horizontal overflow on ${path}`, async ({ page }) => {
+      await page.goto(path);
+      const clipped = await page.evaluate(() => {
+        const width = document.documentElement.clientWidth;
+        return [...document.querySelectorAll("button, input, a")].filter(
+          (el) => el.getBoundingClientRect().right > width + 1,
+        ).length;
+      });
+      expect(clipped).toBe(0);
+    });
+  }
+
+  test("picks controls stay reachable on a phone", async ({ page }) => {
+    await page.goto("/alt-ust");
+    const row = page.locator('li[data-team="BOS"]');
+    await row.getByRole("button", { name: "ÜST" }).click();
+    await row.getByRole("button", { name: "Güven 3 / 3" }).click();
+    await row.getByRole("spinbutton").fill("55");
+    await expect(row.getByRole("spinbutton")).toHaveValue("55");
+  });
+
+  test("opens a preview to save the image", async ({ page }) => {
+    await page.goto("/ozet");
+    await page.getByRole("button", { name: "TÜMÜNÜ İNDİR" }).click();
+    const dialog = page.getByRole("dialog", { name: "TAHMİNİM" });
+    await expect(dialog.getByRole("img", { name: "TAHMİNİM" })).toBeVisible();
+
+    const [download] = await Promise.all([
+      page.waitForEvent("download"),
+      dialog.getByRole("link", { name: /İNDİR/ }).click(),
+    ]);
+    expect(download.suggestedFilename()).toBe("nba-tahmin-2026-27.png");
+
+    await dialog.getByRole("button", { name: "Önizlemeyi kapat" }).click();
+    await expect(dialog).toBeHidden();
+  });
+});

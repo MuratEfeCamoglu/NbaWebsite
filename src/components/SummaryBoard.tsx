@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ACTION_BUTTON, ActionBar } from "@/components/ActionBar";
 import { DownloadImageButton } from "@/components/DownloadImageButton";
 import { SectionTitle } from "@/components/SectionTitle";
 import { TeamBadge } from "@/components/TeamBadge";
@@ -20,8 +21,9 @@ import { formatLine } from "@/lib/totals";
 
 const STAR_PATH =
   "M12 2.8l2.83 5.73 6.33.92-4.58 4.46 1.08 6.3L12 17.24l-5.66 2.97 1.08-6.3-4.58-4.46 6.33-.92z";
+// Phones drop the separate stars column; the stars sit under the Alt/Üst chip.
 const ROW_GRID =
-  "grid grid-cols-[36px_48px_minmax(0,1fr)_56px_76px_60px_56px] items-center gap-x-3 px-4";
+  "grid grid-cols-[22px_40px_minmax(0,1fr)_40px_56px_38px] items-center gap-x-2 px-3 sm:grid-cols-[36px_48px_minmax(0,1fr)_56px_76px_60px_56px] sm:gap-x-3 sm:px-4";
 
 export function SummaryBoard() {
   const [draft] = useDraft();
@@ -30,7 +32,7 @@ export function SummaryBoard() {
 
   return (
     <>
-      <div className="flex flex-col gap-8 px-6 lg:px-30">
+      <div className="flex flex-col gap-8 px-4 sm:px-6 lg:px-30">
         <WinTotalMeter total={summary.total} />
 
         <dl className="grid grid-cols-2 gap-4 lg:grid-cols-5">
@@ -80,13 +82,22 @@ export function SummaryBoard() {
                   <div className="border-border bg-surface overflow-hidden rounded-2xl border">
                     <div
                       aria-hidden="true"
-                      className={`${ROW_GRID} border-border bg-surface-raised text-ink-muted h-10 border-b text-[11px] font-semibold tracking-[0.12em]`}
+                      className={`${ROW_GRID} border-border bg-surface-raised text-ink-muted h-10 border-b text-[10px] font-semibold tracking-[0.04em] sm:text-[11px] sm:tracking-[0.12em]`}
                     >
-                      <div className="text-right">{tr.picks.columns.rank}</div>
+                      <div className="text-right">
+                        <span className="sm:hidden">#</span>
+                        <span className="max-sm:hidden">
+                          {tr.picks.columns.rank}
+                        </span>
+                      </div>
                       <div className="col-span-2">{tr.picks.columns.team}</div>
                       <div className="text-right">{tr.picks.columns.line}</div>
-                      <div>{tr.summary.columns.side}</div>
-                      <div>{tr.picks.columns.confidence}</div>
+                      <div className="max-sm:text-center">
+                        {tr.summary.columns.side}
+                      </div>
+                      <div className="max-sm:hidden">
+                        {tr.picks.columns.confidence}
+                      </div>
                       <div className="text-right">
                         {tr.summary.columns.projection}
                       </div>
@@ -106,35 +117,37 @@ export function SummaryBoard() {
 
       <div className="flex-1" />
 
-      <div className="border-border bg-bg sticky bottom-0 z-20 mt-10 flex flex-wrap items-center justify-between gap-4 border-t px-6 py-5 lg:px-30">
-        <p className="text-ink-soft max-w-[360px] text-sm">
-          {tr.summary.downloadHint}
-        </p>
-        <div className="flex flex-wrap gap-3">
-          <Link
-            href="/alt-ust"
-            className="border-border-strong font-display hover:bg-surface-active flex h-13 items-center gap-2 rounded-xl border px-6 text-xl font-bold tracking-[0.08em]"
+      <ActionBar status={tr.summary.downloadHint}>
+        <Link href="/alt-ust" className={`${ACTION_BUTTON} max-sm:hidden`}>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
           >
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M19 12H5M11 6l-6 6 6 6" />
-            </svg>
-            {tr.summary.back}
-          </Link>
-          <DownloadImageButton variant="ranking" />
-          <DownloadImageButton variant="picks" />
-          <DownloadImageButton variant="all" primary />
-        </div>
-      </div>
+            <path d="M19 12H5M11 6l-6 6 6 6" />
+          </svg>
+          {tr.summary.back}
+        </Link>
+        <DownloadImageButton
+          variant="ranking"
+          shortLabel={tr.summary.downloadVariantShort.ranking}
+        />
+        <DownloadImageButton
+          variant="picks"
+          shortLabel={tr.summary.downloadVariantShort.picks}
+        />
+        <DownloadImageButton
+          variant="all"
+          shortLabel={tr.summary.downloadVariantShort.all}
+          primary
+        />
+      </ActionBar>
     </>
   );
 }
@@ -225,7 +238,7 @@ function SummaryLine({ row }: { row: SummaryRow }) {
             : ""
       }`}
     >
-      <div className="font-display text-ink-muted text-right text-2xl font-bold tabular-nums">
+      <div className="font-display text-ink-muted text-right text-xl font-bold tabular-nums sm:text-2xl">
         {row.rank ?? "–"}
       </div>
       <TeamBadge teamId={row.teamId} />
@@ -238,18 +251,18 @@ function SummaryLine({ row }: { row: SummaryRow }) {
         </div>
         <div
           lang="en"
-          className="font-display truncate text-xl leading-none font-bold tracking-[0.03em] uppercase"
+          className="font-display truncate text-lg leading-none font-bold tracking-[0.03em] uppercase sm:text-xl"
         >
           {team.name}
         </div>
       </div>
-      <div className="font-display text-right text-2xl font-extrabold tabular-nums">
+      <div className="font-display text-right text-xl font-extrabold tabular-nums sm:text-2xl">
         {formatLine(row.line)}
       </div>
-      <div>
+      <div className="flex flex-col gap-1">
         {row.side ? (
           <span
-            className={`font-display flex h-8 items-center justify-center rounded-lg text-base font-bold tracking-[0.08em] ${
+            className={`font-display flex h-7 items-center justify-center rounded-lg text-sm font-bold tracking-[0.06em] sm:h-8 sm:text-base sm:tracking-[0.08em] ${
               row.side === "over"
                 ? "bg-over text-over-ink"
                 : "bg-under text-under-ink"
@@ -263,41 +276,66 @@ function SummaryLine({ row }: { row: SummaryRow }) {
             <span className="sr-only">{tr.summary.noPick}</span>
           </span>
         )}
+        {row.side && (
+          <Stars
+            confidence={row.confidence}
+            size={12}
+            className={`justify-center sm:hidden ${tone}`}
+          />
+        )}
       </div>
+      <Stars
+        confidence={row.confidence}
+        size={20}
+        className={`max-sm:hidden ${tone}`}
+      />
       <div
-        className={`flex ${tone}`}
-        role="img"
-        aria-label={tr.picks.confidenceStar(row.confidence ?? 0)}
-      >
-        {[1, 2, 3].map((level) => {
-          const on = (row.confidence ?? 0) >= level;
-          return (
-            <svg
-              key={level}
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-              className={on ? "" : "text-border-strong"}
-            >
-              <path
-                d={STAR_PATH}
-                fill={on ? "currentColor" : "none"}
-                stroke="currentColor"
-                strokeWidth="1.6"
-                strokeLinejoin="round"
-              />
-            </svg>
-          );
-        })}
-      </div>
-      <div
-        className={`font-display text-right text-2xl font-bold tabular-nums ${
+        className={`font-display text-right text-xl font-bold tabular-nums sm:text-2xl ${
           row.conflict ? "text-warn" : ""
         }`}
       >
         {row.projectedWins ?? <span className="text-ink-faint">—</span>}
       </div>
     </li>
+  );
+}
+
+function Stars({
+  confidence,
+  size,
+  className,
+}: {
+  confidence: SummaryRow["confidence"];
+  size: number;
+  className: string;
+}) {
+  return (
+    <div
+      className={`flex ${className}`}
+      role="img"
+      aria-label={tr.picks.confidenceStar(confidence ?? 0)}
+    >
+      {[1, 2, 3].map((level) => {
+        const on = (confidence ?? 0) >= level;
+        return (
+          <svg
+            key={level}
+            width={size}
+            height={size}
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            className={on ? "" : "text-border-strong"}
+          >
+            <path
+              d={STAR_PATH}
+              fill={on ? "currentColor" : "none"}
+              stroke="currentColor"
+              strokeWidth="1.6"
+              strokeLinejoin="round"
+            />
+          </svg>
+        );
+      })}
+    </div>
   );
 }

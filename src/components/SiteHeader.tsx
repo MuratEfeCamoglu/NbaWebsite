@@ -20,7 +20,7 @@ export function SiteHeader({ current }: { current?: Step }) {
   const lockText = formatDateTime(SEASON.lockAt, SEASON.displayTimeZone);
 
   return (
-    <header className="border-border flex min-h-18 shrink-0 flex-wrap items-center justify-between gap-x-6 gap-y-2 border-b px-6 py-3 lg:px-30">
+    <header className="border-border flex min-h-18 shrink-0 flex-wrap items-center justify-between gap-x-6 gap-y-3 border-b px-4 py-3 sm:px-6 lg:px-30">
       <Link
         href="/"
         aria-label={tr.brand.homeLabel}
@@ -34,8 +34,11 @@ export function SiteHeader({ current }: { current?: Step }) {
         </span>
       </Link>
 
-      <nav aria-label={tr.nav.label}>
-        <ol className="font-display flex gap-2 text-[17px] font-semibold tracking-[0.08em]">
+      <nav
+        aria-label={tr.nav.label}
+        className="order-last w-full lg:order-none lg:w-auto"
+      >
+        <ol className="font-display grid grid-cols-3 gap-1 text-[15px] font-semibold tracking-[0.06em] sm:text-[17px] sm:tracking-[0.08em] lg:flex lg:gap-2">
           {STEPS.map((step) => (
             <li key={step.id}>
               <Link
@@ -43,8 +46,8 @@ export function SiteHeader({ current }: { current?: Step }) {
                 aria-current={current === step.id ? "step" : undefined}
                 className={
                   current === step.id
-                    ? "border-border-strong bg-surface-active text-ink block rounded-full border px-3.5 py-2"
-                    : "text-ink-muted hover:text-ink block border border-transparent px-3.5 py-2"
+                    ? "border-border-strong bg-surface-active text-ink block rounded-full border px-2 py-2 text-center whitespace-nowrap sm:px-3.5"
+                    : "text-ink-muted hover:text-ink block border border-transparent px-2 py-2 text-center whitespace-nowrap sm:px-3.5"
                 }
               >
                 {step.label}
@@ -54,17 +57,22 @@ export function SiteHeader({ current }: { current?: Step }) {
         </ol>
       </nav>
 
-      <div className="flex items-baseline gap-3">
-        <span className="text-ink-muted text-xs font-semibold tracking-[0.1em]">
-          {tr.lock.label}
+      <div className="flex items-baseline gap-2 sm:gap-3">
+        <span className="text-ink-muted text-[11px] font-semibold tracking-[0.1em] sm:text-xs">
+          <span className="sm:hidden" aria-hidden="true">
+            {tr.lock.shortLabel}
+          </span>
+          <span className="max-sm:sr-only">{tr.lock.label}</span>
         </span>
         <time
           dateTime={SEASON.lockAt}
-          className="font-display text-xl font-bold tabular-nums"
+          className="font-display text-base font-bold whitespace-nowrap tabular-nums sm:text-xl"
         >
           {lockText}
         </time>
-        <span className="text-ink-muted text-xs">{tr.lock.zone}</span>
+        <span className="text-ink-muted text-[11px] whitespace-nowrap sm:text-xs">
+          {tr.lock.zone}
+        </span>
       </div>
     </header>
   );

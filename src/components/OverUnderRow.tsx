@@ -9,8 +9,16 @@ import type { DraftPick } from "@/lib/validation";
 type Side = NonNullable<DraftPick["side"]>;
 type Confidence = NonNullable<DraftPick["confidence"]>;
 
+/** Six columns in one row from `md` up; the header row only exists there. */
 export const ROW_GRID =
-  "grid grid-cols-[40px_minmax(0,1fr)_72px_168px_132px_72px] items-center gap-x-3 px-4 lg:grid-cols-[56px_minmax(0,1fr)_112px_212px_152px_104px] lg:gap-x-6 lg:px-6";
+  "items-center gap-x-3 md:grid-cols-[40px_minmax(0,1fr)_72px_168px_132px_72px] md:px-4 lg:grid-cols-[56px_minmax(0,1fr)_112px_212px_152px_104px] lg:gap-x-6 lg:px-6";
+
+/**
+ * Phones: two rows. Rank, team and line on top; Alt/Üst, stars and the
+ * projection below, so every control stays on screen.
+ */
+const MOBILE_GRID =
+  "grid-cols-[24px_minmax(0,1fr)_auto_60px] gap-y-2.5 px-3 py-3 md:h-19 md:gap-y-0 md:py-0";
 
 const CONFIDENCE_LEVELS: Confidence[] = [1, 2, 3];
 const STAR_PATH =
@@ -56,12 +64,12 @@ export function OverUnderRow({
       data-team={teamId}
       className={`border-border flex flex-col border-b last:border-b-0 ${rowTint}`}
     >
-      <div className={`${ROW_GRID} h-19`}>
-        <div className="font-display text-ink-faint text-right text-3xl font-bold tabular-nums">
+      <div className={`grid ${ROW_GRID} ${MOBILE_GRID}`}>
+        <div className="font-display text-ink-faint text-right text-2xl font-bold tabular-nums md:text-3xl">
           {rank ?? "–"}
         </div>
 
-        <div className="flex min-w-0 items-center gap-3 lg:gap-4">
+        <div className="col-span-2 flex min-w-0 items-center gap-3 md:col-auto lg:gap-4">
           <TeamBadge teamId={teamId} />
           <div className="flex min-w-0 flex-col gap-0.5">
             <div
@@ -72,7 +80,7 @@ export function OverUnderRow({
             </div>
             <div
               lang="en"
-              className="font-display truncate text-2xl leading-none font-bold tracking-[0.03em] uppercase"
+              className="font-display truncate text-xl leading-none font-bold tracking-[0.03em] uppercase md:text-2xl"
             >
               {team.name}
             </div>
@@ -80,6 +88,12 @@ export function OverUnderRow({
         </div>
 
         <div className="font-display text-right text-3xl leading-none font-extrabold tabular-nums lg:text-[38px]">
+          <span
+            aria-hidden="true"
+            className="text-ink-muted mb-1 block font-sans text-[10px] font-semibold tracking-[0.12em] md:hidden"
+          >
+            {tr.picks.columns.line}
+          </span>
           {lineText}
           {needsReview && (
             <sup
@@ -95,7 +109,7 @@ export function OverUnderRow({
         <div
           role="group"
           aria-label={tr.picks.sideGroup(label)}
-          className="flex gap-1.5"
+          className="col-span-2 flex gap-1.5 self-end md:col-auto md:self-auto"
         >
           <SideButton
             side="under"
@@ -116,7 +130,7 @@ export function OverUnderRow({
         <div
           role="group"
           aria-label={tr.picks.confidenceGroup(label)}
-          className="flex"
+          className="flex self-end md:self-auto"
         >
           {CONFIDENCE_LEVELS.map((level) => {
             const on = (pick?.confidence ?? 0) >= level;
@@ -128,7 +142,7 @@ export function OverUnderRow({
                 aria-pressed={pick?.confidence === level}
                 disabled={disabled || side === undefined}
                 onClick={() => onConfidence(level)}
-                className={`flex size-11 items-center justify-center rounded-lg disabled:cursor-not-allowed ${
+                className={`flex h-11 w-9 items-center justify-center rounded-lg disabled:cursor-not-allowed sm:w-11 ${
                   on ? starTone : "text-ink-faint"
                 } ${side === undefined ? "opacity-40" : ""}`}
               >
@@ -151,7 +165,13 @@ export function OverUnderRow({
           })}
         </div>
 
-        <div>
+        <div className="self-end md:self-auto">
+          <span
+            aria-hidden="true"
+            className="text-ink-muted mb-1 block text-center text-[10px] font-semibold tracking-[0.12em] md:hidden"
+          >
+            {tr.picks.columns.projection}
+          </span>
           <input
             type="number"
             inputMode="numeric"
@@ -173,7 +193,7 @@ export function OverUnderRow({
       </div>
 
       {conflict && pick?.projectedWins !== undefined && (
-        <p className="border-warn/40 bg-warn/8 -mt-1 mr-4 mb-3.5 ml-16 flex items-center gap-2.5 rounded-[10px] border px-3.5 py-2.5 text-sm leading-[1.4] text-[#F3E7B8] lg:mr-6 lg:ml-26">
+        <p className="border-warn/40 bg-warn/8 mx-3 mb-3.5 flex items-center gap-2.5 rounded-[10px] border px-3.5 py-2.5 text-sm leading-[1.4] text-[#F3E7B8] md:-mt-1 md:mr-4 md:ml-16 lg:mr-6 lg:ml-26">
           <svg
             width="18"
             height="18"
